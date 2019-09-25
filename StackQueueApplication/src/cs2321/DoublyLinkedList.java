@@ -277,4 +277,13 @@ public class DoublyLinkedList<E> implements PositionalList<E> {
 		return remove(trailer.prev);
 	}
 
+	public boolean equalsArray(E[] e) {
+		Position temp = this.first();
+		for (int i = 0; i <= size - 1; i++) {
+			if(!e[i].equals(temp.getElement())) return false;
+			temp = this.after(temp);
+		}
+		return true;
+	}
+
 }

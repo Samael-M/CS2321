@@ -1,7 +1,5 @@
 package cs2321;
 
-import net.datastructures.Position;
-
 public class Josephus {
 	/**
 	 * All persons sit in a circle. When we go around the circle, initially starting
@@ -30,13 +28,5 @@ public class Josephus {
 			result.addLast(People.dequeue());
 		}
 		return result;
-	}
-	public static void main(String[] args) {
-		Josephus test = new Josephus();
-		String[] testt = new String[] {"A", "B", "C", "D", "E", "F"};
-		DoublyLinkedList temp = test.order(testt, 3);
-		for (int i = 0; i < 6; i++){
-			System.out.println(temp.removeFirst());
-		}
 	}
 }

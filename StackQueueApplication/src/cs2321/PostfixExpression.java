@@ -16,10 +16,39 @@ public class PostfixExpression {
 	 * @param exp The postfix expression
 	 * @return the result of the expression
 	 */
+
 	public static int evaluate(String exp) {
-		//TO DO: implement this function with the help of Stack
-		return 0;
+		DLLStack stack = new DLLStack();
+		String[] string = exp.split("\\s+");
+		for(int i = 0; i <= string.length -1; i++) {
+			if (isInt(string[i])) {
+				stack.push(Integer.parseInt(string[i]));
+			}
+			else if (string[i].charAt(0) == '+') {
+				stack.push((int) stack.pop() + (int) stack.pop());
+			}
+			else if (string[i].charAt(0) == '-') {
+				int temp = (int) stack.pop();
+				stack.push((int) stack.pop() - temp);
+			}
+			else if (string[i].charAt(0) == '/') {
+				int temp = (int) stack.pop();
+				stack.push((int) stack.pop() / temp);
+			}
+			else if (string[i].charAt(0) == '*') {
+				stack.push((int) stack.pop() * (int) stack.pop());
+			}
+			else throw new IllegalArgumentException("Invalid postfix expression");
+		}
+		return (int) stack.pop();
 	}
-				
-	
+
+	public static boolean isInt(String s) {
+		try {
+			int integer = Integer.parseInt(s);
+		} catch (NumberFormatException | NullPointerException nfe) {
+			return false;
+		}
+		return true;
+	}
 }

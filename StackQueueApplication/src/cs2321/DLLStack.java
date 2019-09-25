@@ -8,31 +8,27 @@ public class DLLStack<E> implements Stack<E> {
 
 	@Override
 	public int size() {
-		Stack.size();
-		return 0;
+		return Stack.size();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		Stack.isEmpty();
-		return false;
-	}
+		return Stack.isEmpty();
+}
 
 	@Override
 	public void push(E e) {
-		Stack.addFirst(e);
+		Stack.addLast(e);
 	}
 
 	@Override
 	public E top() {
-		Stack.first();
-		return null;
+		return Stack.last().getElement();
 	}
 
 	@Override
 	public E pop() {
-		Stack.removeFirst();
-		return null;
+		return Stack.removeLast();
 	}
 
 }

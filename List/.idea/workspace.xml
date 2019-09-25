@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ddfb601-638a-482d-b1a8-5c7cfcbc6dc2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/bin/cs2321/DLLStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/bin/cs2321/DLLStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/bin/cs2321/InfixToPostfix.class" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/bin/cs2321/InfixToPostfix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/bin/cs2321/PostfixExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/bin/cs2321/PostfixExpression.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/DLLStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/DLLStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/InfixToPostfix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/InfixToPostfix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/PostfixExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/src/cs2321/PostfixExpression.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -21,12 +25,13 @@
     <session id="-941346338">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.63" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -36,7 +41,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -46,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs2321/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
+            <state relative-caret-position="1054">
               <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -58,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="2703">
               <caret line="186" column="70" selection-end-line="280" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,11 +72,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs2321/CircularArrayQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
+            <state relative-caret-position="17">
               <caret line="18" column="19" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/ArrayList/ArrayListCapacity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -109,6 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,11 +147,16 @@
               <item name="List" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="List" type="b2602c69:ProjectViewProjectNode" />
+              <item name="List" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="ArrayList" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -276,6 +296,7 @@
       <workItem from="1568776580440" duration="2398000" />
       <workItem from="1568919247719" duration="76000" />
       <workItem from="1568931254591" duration="511000" />
+      <workItem from="1569199987877" duration="402000" />
     </task>
     <servers />
   </component>
@@ -312,7 +333,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28763000" />
+    <option name="totallyTimeSpent" value="29165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,7 +348,7 @@
     <frame x="1912" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13239075" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1336761" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -367,13 +388,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/ArrayList/ArrayListCapacity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/DoublyLinkedList/ListExceptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -432,7 +446,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
+        <state relative-caret-position="1054">
           <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -442,7 +456,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="2703">
           <caret line="186" column="70" selection-end-line="280" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -452,8 +466,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/CircularArrayQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="17">
           <caret line="18" column="19" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ArrayList/ArrayListCapacity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
