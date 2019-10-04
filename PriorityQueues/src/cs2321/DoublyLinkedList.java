@@ -277,4 +277,24 @@ public class DoublyLinkedList<E> implements PositionalList<E> {
 		return remove(trailer.prev);
 	}
 
+	public Position<E> getPositon(int i) {
+		Position pos = this.first();
+		for(int j = 0; j <= i - 1; j++) {
+			pos = this.after(pos);
+		}
+		return pos;
+	}
+
+//	public static void main(String[] args) {
+//		DoublyLinkedList list = new DoublyLinkedList();
+//		list.addFirst(1);
+//		list.addFirst(2);
+//		list.addFirst(3);
+//		list.addFirst(4);
+//		for(int i = 0; i<= list.size() - 1; i++){
+//			System.out.println(list.getPositon(i).getElement());
+//		}
+//
+//	}
+
 }
