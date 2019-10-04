@@ -24,7 +24,7 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
