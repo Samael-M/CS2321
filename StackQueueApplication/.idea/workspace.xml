@@ -4,26 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/cs2321/InfixToPostfixTest.java" line="29" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5b11eb0-5942-4830-878c-6f914421f879" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../List/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../List/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StackQueueApplication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StackQueueApplication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/DLLStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/DLLStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/InfixToPostfix.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/InfixToPostfix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/InfixToPostfixTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/InfixToPostfixTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/Josephus.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/Josephus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/JosephusTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/JosephusTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/PostfixExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/PostfixExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/PostfixExpressionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/PostfixExpressionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/DLLStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/DLLStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/InfixToPostfix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/InfixToPostfix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/InfixToPostfixTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/InfixToPostfixTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/Josephus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/Josephus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/JosephusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/JosephusTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/PostfixExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/PostfixExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/PostfixExpressionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/PostfixExpressionTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e5b11eb0-5942-4830-878c-6f914421f879" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,12 +16,13 @@
     <session id="1630271602">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.39" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -56,7 +38,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -97,8 +79,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-75" />
-    <option name="y" value="83" />
+    <option name="x" value="-39" />
+    <option name="y" value="10" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -108,7 +90,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,6 +118,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -267,6 +249,7 @@
       <workItem from="1569173612285" duration="13770000" />
       <workItem from="1569269157596" duration="15358000" />
       <workItem from="1569370818259" duration="7379000" />
+      <workItem from="1570147439964" duration="104000" />
     </task>
     <servers />
   </component>
@@ -303,12 +286,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47252000" />
+    <option name="totallyTimeSpent" value="47356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25746268" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26012793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -469,16 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="737">
           <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
-          <folding>
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1110#1111#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
