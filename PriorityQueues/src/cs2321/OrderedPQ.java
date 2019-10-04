@@ -39,7 +39,7 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
 		PQEntry E = new PQEntry<>(key, value);
 		Heap.addLast(E);
-		upheap(Heap.size() - 1);
+		upheap(size() - 1);
 		return E;
 	}
 
@@ -74,7 +74,7 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 	}
 
 	public void downheap(int i) {
-		if(i == 0){ }
+		if(i == size() - 1){ }
 		else {
 			int c1 = getRightChild(i);
 			int c2 = getLeftChild(i);
