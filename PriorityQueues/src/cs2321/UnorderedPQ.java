@@ -11,14 +11,15 @@ import net.datastructures.*;
  * @author
  */
 
+//Page 367(385) in book
 public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 
 	public UnorderedPQ() {
-		//TODO implement this method
+		super();
 	}
 	
 	public UnorderedPQ(Comparator<K> c) {
-			//TODO implement this method
+			//TODO super(c);
 	}
 
 	@Override

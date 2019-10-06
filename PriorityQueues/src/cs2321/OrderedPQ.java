@@ -14,15 +14,15 @@ import net.datastructures.*;
 
 public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 
-	DoublyLinkedList<PQEntry> Heap = new DoublyLinkedList();
+	private DoublyLinkedList<PQEntry> Heap = new DoublyLinkedList();
 	DefaultComparator C = new DefaultComparator();
 
 	public OrderedPQ() {
-		//TODO implement this method
+		super();
 	}
 	
 	public OrderedPQ(Comparator<K> c) {
-		//TODO implement this method
+		//TODO super(c);
 	}
 	
 	@Override
@@ -74,19 +74,20 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 	}
 
 	public void downheap(int i) {
-		if(i == size() - 1){ }
+		int s = i;
+		if(!hasLeftChild(i)) {}
 		else {
-			int c1 = getRightChild(i);
-			int c2 = getLeftChild(i);
-			if( (C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(c1).getElement()) > 0) || (C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(c1).getElement()) > 0) ) {
-				if(C.compare(Heap.getPositon(c1).getElement(), Heap.getPositon(c2).getElement()) > 0) {
-					swap(i, c2);
-					downheap(c2);
-				}
-				else{
-					swap(i, c1);
-					downheap(c1);
-				}
+			int c1 = getLeftChild(i);
+			int c2 = getRightChild(i);
+			if(hasLeftChild(i) && C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(c1).getElement()) > 0){
+				s = getLeftChild(i);
+			}
+			if(hasRightChild(i) && C.compare(Heap.getPositon(s).getElement(), Heap.getPositon(c2).getElement()) > 0){
+				s = getRightChild(i);
+			}
+			if(i != s) {
+					swap(i, s);
+					downheap(s);
 			}
 		}
 	}
@@ -97,9 +98,24 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 	public int getLeftChild (int i) {
 		return 2 * i + 1;
 	}
-
 	public int getRightChild(int i) {
 		return 2 * i + 2;
+	}
+	public boolean hasLeftChild(int i) {
+		try {
+			getLeftChild(i);
+		} catch (NullPointerException e) {
+			return false;
+		}
+		return true;
+	}
+	public boolean hasRightChild(int i) {
+		try {
+			getRightChild(i);
+		} catch (NullPointerException e) {
+			return false;
+		}
+		return true;
 	}
 
 }
