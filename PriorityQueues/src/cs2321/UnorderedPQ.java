@@ -1,7 +1,6 @@
 package cs2321;
 
 import java.util.Comparator;
-
 import net.datastructures.*;
 /**
  * A PriorityQueue based on an Unordered Doubly Linked List. 
@@ -14,42 +13,56 @@ import net.datastructures.*;
 //Page 367(385) in book
 public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 
+	private DoublyLinkedList<Entry<K, V>> Heap = new DoublyLinkedList();
+	DefaultComparator C = new DefaultComparator();
+
 	public UnorderedPQ() {
 		super();
 	}
 	
 	public UnorderedPQ(Comparator<K> c) {
-			//TODO super(c);
+		c = new DefaultComparator<K>();
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 1;
+		return Heap.size();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return Heap.isEmpty();
 	}
+
 
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return null;
+		//checkKey(key); // auxiliary key-checking method (could throw exception)
+		Entry<K,V> newest = new PQEntry<>(key, value);
+		Heap.addLast(newest);
+		return newest;
+	}
+
+	public Position<Entry<K, V>> findMin() {
+		Position<Entry<K, V>> small = Heap.first();
+		for(Position<Entry<K, V>> walk: Heap.positions()) {
+			if(C.compare(walk.getElement(), small.getElement()) < 0) {
+				small = walk;
+			}
+		}
+		return small;
 	}
 
 	@Override
 	public Entry<K, V> min() {
-		// TODO Auto-generated method stub
-		return null;
+		if(Heap.isEmpty()) return null;
+		return findMin().getElement();
 	}
 
 	@Override
 	public Entry<K, V> removeMin() {
-		// TODO Auto-generated method stub
-		return null;
+		if(Heap.isEmpty()) return null;
+		return findMin().getElement();
 	}
 	
 	

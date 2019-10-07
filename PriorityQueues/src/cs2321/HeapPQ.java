@@ -1,7 +1,6 @@
 package cs2321;
 
 import java.util.Comparator;
-
 import net.datastructures.*;
 /**
  * A Adaptable PriorityQueue based on an heap. 
@@ -15,7 +14,6 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 
 	private ArrayList<Entry<K, V>> heap = new ArrayList<>();
 	DefaultComparator C = new DefaultComparator();
-	private int index;
 
 	private class AdaptablePQEntry<K, V> extends PQEntry<K, V> {
 		private int index;
@@ -28,7 +26,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	}
 	
 	public HeapPQ(Comparator<K> c) {
-		super(c);
+		c = new DefaultComparator<K>();
 	}
 
 	/**
@@ -127,27 +125,47 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	}
 
 
-	public PQEntry<K, V> validate(Entry<K, V> entry) {
+	public AdaptablePQEntry<K, V> validate(Entry<K, V> entry) {
 		if(!(entry instanceof PQEntry)) throw new IllegalArgumentException("Invalid Entry");
-		PQEntry<K, V> locator =(PQEntry<K, V>) entry;
-		//int j = locator.getIndex();
+		AdaptablePQEntry<K, V> locator =( AdaptablePQEntry<K, V>) entry;
+		int j = locator.getIndex();
+		if(j >= heap.size() || heap.get(j) != locator) {
+			throw new IllegalArgumentException("invalid entry");
+		}
+		return locator;
+	}
+
+	public void bubble(int j) {
+		if (j > 0 && C.compare(heap.get(j), heap.get(parent(j))) > 0) {
+			upheap(j);
+		} else downheap(j);
 	}
 
 	@Override
 	public void remove(Entry<K, V> entry) throws IllegalArgumentException {
-		PQEntry locator = new
-		
+		AdaptablePQEntry<K, V> locator = validate(entry);
+		int j = locator.getIndex();
+		if (j == heap.size() -1) {
+			heap.remove(heap.size() - 1);
+		} else {
+			swap(j, heap.size() - 1);
+			heap.remove(heap.size() - 1);
+			bubble(j);
+		}
 	}
 
 	@Override
 	public void replaceKey(Entry<K, V> entry, K key) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		
+		AdaptablePQEntry<K, V> locator = validate(entry);
+		//checkKey(key);
+		locator.setKey(key);
+		bubble(locator.getIndex());
 	}
 
 	@Override
 	public void replaceValue(Entry<K, V> entry, V value) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
+		AdaptablePQEntry<K, V> locator = validate(entry);
+		locator.setValue(value);
 		
 	}
 	

@@ -1,8 +1,6 @@
 package cs2321;
 
 import java.util.Comparator;
-
-import javafx.scene.layout.HBox;
 import net.datastructures.*;
 /**
  * A PriorityQueue based on an ordered Doubly Linked List. 
@@ -22,7 +20,7 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 	}
 	
 	public OrderedPQ(Comparator<K> c) {
-		//TODO super(c);
+		c = new DefaultComparator<K>();
 	}
 	
 	@Override
