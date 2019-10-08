@@ -22,6 +22,15 @@ public class HeapPQTest {
 		heappq.insert("Eskimo", 6);
 		heappq.insert("Mukluks", 7);
 		heappq.insert("Macadamia", 9);
+
+//		heappq = new HeapPQ<Integer, String>();
+//		heappq.insert(16, "Bulbous Bouffant");
+//		heappq.insert(6, "Gazebo");
+//		heappq.insert(7, "Balooga");
+//		heappq.insert(8, "Galoshes");
+//		heappq.insert(6, "Eskimo");
+//		heappq.insert(7, "Mukluks");
+//		heappq.insert(9, "Macadamia");
 	}
 
 	@Test
@@ -66,7 +75,6 @@ public class HeapPQTest {
 	public void testMin() {
 		fail("Not yet implemented"); // TODO
 	}
-
 
 	@Test
 	public void testRemove() {

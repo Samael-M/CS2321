@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5b11eb0-5942-4830-878c-6f914421f879" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../PriorityQueues/.idea/libraries/hamcrest_core_1_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PriorityQueues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/DefaultComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/DefaultComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/OrderedPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/OrderedPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/PriorityQueues.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/PriorityQueues.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/DoublyLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/HeapPQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/HeapPQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/OrderedPQ$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/OrderedPQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/OrderedPQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/UnorderedPQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/bin/cs2321/UnorderedPQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/HeapPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueues/src/cs2321/HeapPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,14 +28,14 @@
     <session id="1630271602">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.46" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -43,11 +51,11 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs2321/DLLStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="306">
               <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
               <folding>
                 <element signature="e#183#184#0" expanded="true" />
@@ -60,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs2321/CircularArrayQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="697">
               <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
             </state>
           </provider>
@@ -69,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs2321/PostfixExpression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="45" column="14" selection-start-line="45" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
+            <state relative-caret-position="493">
+              <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -115,11 +123,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-39" />
-    <option name="y" value="10" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -127,6 +135,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -156,7 +165,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,6 +296,7 @@
       <workItem from="1569370818259" duration="7379000" />
       <workItem from="1570147439964" duration="104000" />
       <workItem from="1570206541277" duration="619000" />
+      <workItem from="1570557436836" duration="213000" />
     </task>
     <servers />
   </component>
@@ -324,13 +333,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47975000" />
+    <option name="totallyTimeSpent" value="48188000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="1912" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26279318" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3200514" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -471,7 +480,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/DLLStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="306">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding>
             <element signature="e#183#184#0" expanded="true" />
@@ -482,15 +491,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/CircularArrayQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="697">
           <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/PostfixExpression.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="45" column="14" selection-start-line="45" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="493">
+          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -551,7 +560,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

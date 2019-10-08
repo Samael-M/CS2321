@@ -14,14 +14,15 @@ import net.datastructures.*;
 public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 
 	private DoublyLinkedList<Entry<K, V>> Heap = new DoublyLinkedList();
-	DefaultComparator C = new DefaultComparator();
+	Comparator<K> C;
 
 	public UnorderedPQ() {
 		super();
+		C = new DefaultComparator<K>();
 	}
 	
 	public UnorderedPQ(Comparator<K> c) {
-		c = new DefaultComparator<K>();
+		this.C = c;
 	}
 
 	@Override
@@ -34,10 +35,17 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 		return Heap.isEmpty();
 	}
 
+	public boolean checkKey(K key) throws IllegalArgumentException {
+		try {
+			return(C.compare(key, key) == 0);
+		} catch(ClassCastException e) {
+			throw new IllegalArgumentException("Incompatible key");
+		}
+	}
 
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
-		//checkKey(key); // auxiliary key-checking method (could throw exception)
+		checkKey(key);
 		Entry<K,V> newest = new PQEntry<>(key, value);
 		Heap.addLast(newest);
 		return newest;
@@ -46,7 +54,7 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 	public Position<Entry<K, V>> findMin() {
 		Position<Entry<K, V>> small = Heap.first();
 		for(Position<Entry<K, V>> walk: Heap.positions()) {
-			if(C.compare(walk.getElement(), small.getElement()) < 0) {
+			if(C.compare(walk.getElement().getKey(), small.getElement().getKey()) < 0) {
 				small = walk;
 			}
 		}
@@ -62,7 +70,7 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 	@Override
 	public Entry<K, V> removeMin() {
 		if(Heap.isEmpty()) return null;
-		return findMin().getElement();
+		return Heap.remove(findMin());
 	}
 	
 	

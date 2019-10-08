@@ -1,7 +1,11 @@
 package cs2321;
 
 import java.util.Comparator;
+
+import javafx.geometry.Pos;
 import net.datastructures.*;
+import sun.font.CompositeStrike;
+
 /**
  * A PriorityQueue based on an ordered Doubly Linked List. 
  * 
@@ -12,15 +16,16 @@ import net.datastructures.*;
 
 public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 
-	private DoublyLinkedList<PQEntry> Heap = new DoublyLinkedList();
-	DefaultComparator C = new DefaultComparator();
+	private DoublyLinkedList<Entry<K, V>> Heap = new DoublyLinkedList();
+	Comparator C;
 
 	public OrderedPQ() {
 		super();
+		C = new DefaultComparator<K>();
 	}
 	
 	public OrderedPQ(Comparator<K> c) {
-		c = new DefaultComparator<K>();
+		this.C = c;
 	}
 	
 	@Override
@@ -33,62 +38,74 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 		return Heap.isEmpty();
 	}
 
+	public boolean checkKey(K key) throws IllegalArgumentException {
+		try {
+			return(C.compare(key, key) == 0);
+		} catch(ClassCastException e) {
+			throw new IllegalArgumentException("Incompatible key");
+		}
+	}
+
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
-		PQEntry E = new PQEntry<>(key, value);
-		Heap.addLast(E);
-		upheap(size() - 1);
-		return E;
+		checkKey(key);
+		Entry<K, V> newest = new PQEntry<>(key, value);
+		Position<Entry<K, V>> walk = Heap.last();
+		while(walk != null && C.compare(newest, walk.getElement()) < 0)
+			walk = Heap.before(walk);
+		if(walk == null)
+			Heap.addFirst(newest);
+		else
+			Heap.addAfter(walk, newest);
+		return newest;
 	}
 
 	@Override
 	public Entry<K, V> min() {
+		if(Heap.isEmpty()) return null;
 		return Heap.first().getElement();
 	}
 
 	@Override
 	public Entry<K, V> removeMin() {
-		PQEntry E = Heap.first().getElement();
-		Heap.set(Heap.first(), Heap.last().getElement());
-		Heap.removeLast();
-		downheap(0);
-		return E;
+		if(Heap.isEmpty()) return null;
+		return Heap.remove(Heap.first());
 	}
 
-	public void swap(int i, int j) {
-		PQEntry tempi = Heap.getPositon(i).getElement();
-		Heap.set(Heap.getPositon(i), Heap.getPositon(i).getElement());
-		Heap.set(Heap.getPositon(j), tempi);
-	}
+//	public void swap(int i, int j) {
+//		Entry tempi = Heap.getPositon(i).getElement();
+//		Heap.set(Heap.getPositon(i), Heap.getPositon(i).getElement());
+//		Heap.set(Heap.getPositon(j), tempi);
+//	}
 
-	public void upheap(int i) {
-		if(i == 0){ }
-		else {
-			int p = getParent(i);if(C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(p).getElement()) < 0) {
-				swap(i, p);
-				upheap(p);
-			}
-		}
-	}
+//	public void upheap(int i) {
+//		if(i == 0){ }
+//		else {
+//			int p = getParent(i);if(C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(p).getElement()) < 0) {
+//				swap(i, p);
+//				upheap(p);
+//			}
+//		}
+//	}
 
-	public void downheap(int i) {
-		int s = i;
-		if(!hasLeftChild(i)) {}
-		else {
-			int c1 = getLeftChild(i);
-			int c2 = getRightChild(i);
-			if(hasLeftChild(i) && C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(c1).getElement()) > 0){
-				s = getLeftChild(i);
-			}
-			if(hasRightChild(i) && C.compare(Heap.getPositon(s).getElement(), Heap.getPositon(c2).getElement()) > 0){
-				s = getRightChild(i);
-			}
-			if(i != s) {
-					swap(i, s);
-					downheap(s);
-			}
-		}
-	}
+//	public void downheap(int i) {
+//		int s = i;
+//		if(!hasLeftChild(i)) {}
+//		else {
+//			int c1 = getLeftChild(i);
+//			int c2 = getRightChild(i);
+//			if(hasLeftChild(i) && C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(c1).getElement()) > 0){
+//				s = getLeftChild(i);
+//			}
+//			if(hasRightChild(i) && C.compare(Heap.getPositon(s).getElement(), Heap.getPositon(c2).getElement()) > 0){
+//				s = getRightChild(i);
+//			}
+//			if(i != s) {
+//					swap(i, s);
+//					downheap(s);
+//			}
+//		}
+//	}
 
 	public int getParent(int i) {
 		return (i - 1) / 2;

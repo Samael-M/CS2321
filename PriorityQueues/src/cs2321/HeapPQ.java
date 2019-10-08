@@ -13,7 +13,7 @@ import net.datastructures.*;
 public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 
 	private ArrayList<Entry<K, V>> heap = new ArrayList<>();
-	DefaultComparator C = new DefaultComparator();
+	Comparator<K> C;
 
 	private class AdaptablePQEntry<K, V> extends PQEntry<K, V> {
 		private int index;
@@ -24,9 +24,13 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		public int getIndex() {return index;}
 		public void setIndex(int j) {index = j;}
 	}
-	
+
+	public HeapPQ() {
+		super();
+		C = new DefaultComparator<K>();
+	}
 	public HeapPQ(Comparator<K> c) {
-		c = new DefaultComparator<K>();
+		this.C = c;
 	}
 
 	/**
@@ -36,7 +40,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	public void upheap(int j){
 		while(j > 0) {
 			int p = parent(j);
-			if(C.compare(heap.get(j), heap.get(p)) > 0) break;
+			if(C.compare(heap.get(j).getKey(), heap.get(p).getKey()) > 0) break;
 			swap(j,p);
 			j = p;
 		}
@@ -44,7 +48,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	
 	/**
 	 * The entry should be bubbled down to its appropriate position 
-	 * @param int move the entry at index j lower if necessary, to restore the heap property
+	 * @param j move the entry at index j lower if necessary, to restore the heap property
 	 */
 	
 	public void downheap(int j){
@@ -53,11 +57,11 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 			int smallChildIndex = leftIndex;
 			if (hasRight(j)) {
 				int rightIndex = right(j);
-				if (C.compare(heap.get(leftIndex), heap.get(rightIndex)) > 0) {
+				if (C.compare(heap.get(leftIndex).getKey(), heap.get(rightIndex).getKey()) > 0) {
 					smallChildIndex = rightIndex;
 				}
 			}
-			if(C.compare(heap.get(smallChildIndex), heap.get(j)) >= 0) break;
+			if(C.compare(heap.get(smallChildIndex).getKey(), heap.get(j).getKey()) >= 0) break;
 			swap(j, smallChildIndex);
 			j = smallChildIndex;
 		}
@@ -69,11 +73,19 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	@Override
 	public boolean isEmpty() { return heap.isEmpty(); }
 
+	public boolean checkKey(K key) throws IllegalArgumentException {
+		try {
+			return(C.compare(key, key) == 0);
+		} catch(ClassCastException e) {
+			throw new IllegalArgumentException("Incompatible key");
+		}
+	}
+
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
-		//checkKey(key);
+		checkKey(key);
 		Entry<K, V> newest = new PQEntry<>(key, value);
-		heap.add(size() - 1, newest);
+		heap.add(size(), newest);
 		upheap(heap.size() - 1);
 		return newest;
 	}
@@ -88,12 +100,14 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	public Entry<K, V> removeMin() {
 		if(heap.isEmpty()) return null;
 		Entry<K, V> answer = heap.get(0);
-		swap(0, heap.size() - 1);
+		swap(0, size() - 1);
+		heap.remove(size() - 1);
 		downheap(0);
 		return answer;
 	}
+
 	public void swap(int i, int j) {
-		Entry tempi = heap.get(i);
+		Entry<K, V> tempi = heap.get(i);
 		heap.set(i, heap.get(j));
 		heap.set(j, tempi);
 	}
@@ -107,23 +121,8 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	public int right(int i) {
 		return 2 * i + 2;
 	}
-	public boolean hasLeft(int i) {
-		try {
-			left(i);
-		} catch (NullPointerException e) {
-			return false;
-		}
-		return true;
-	}
-	public boolean hasRight(int i) {
-		try {
-			right(i);
-		} catch (NullPointerException e) {
-			return false;
-		}
-		return true;
-	}
-
+	private boolean hasLeft(int j) { return left(j) < heap.size(); }
+	private boolean hasRight(int j) { return right(j) < heap.size(); }
 
 	public AdaptablePQEntry<K, V> validate(Entry<K, V> entry) {
 		if(!(entry instanceof PQEntry)) throw new IllegalArgumentException("Invalid Entry");
@@ -136,7 +135,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	}
 
 	public void bubble(int j) {
-		if (j > 0 && C.compare(heap.get(j), heap.get(parent(j))) > 0) {
+		if (j > 0 && C.compare(heap.get(j).getKey(), heap.get(parent(j)).getKey()) > 0) {
 			upheap(j);
 		} else downheap(j);
 	}
@@ -157,7 +156,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	@Override
 	public void replaceKey(Entry<K, V> entry, K key) throws IllegalArgumentException {
 		AdaptablePQEntry<K, V> locator = validate(entry);
-		//checkKey(key);
+		checkKey(key);
 		locator.setKey(key);
 		bubble(locator.getIndex());
 	}
@@ -168,8 +167,4 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		locator.setValue(value);
 		
 	}
-	
-	
-
-
 }

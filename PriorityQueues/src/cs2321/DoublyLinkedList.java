@@ -285,16 +285,4 @@ public class DoublyLinkedList<E> implements PositionalList<E> {
 		return pos;
 	}
 
-//	public static void main(String[] args) {
-//		DoublyLinkedList list = new DoublyLinkedList();
-//		list.addFirst(1);
-//		list.addFirst(2);
-//		list.addFirst(3);
-//		list.addFirst(4);
-//		for(int i = 0; i<= list.size() - 1; i++){
-//			System.out.println(list.getPositon(i).getElement());
-//		}
-//
-//	}
-
 }
