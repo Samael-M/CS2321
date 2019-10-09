@@ -9,7 +9,7 @@ import net.datastructures.*;
  * Assignment: #3
  * @author
  */
-
+@TimeComplexity("O(lg n)")
 public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 
 
@@ -38,7 +38,10 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	 * The entry should be bubbled up to its appropriate position 
 	 * @param j move the entry at index j higher if necessary, to restore the heap property
 	 */
-	@TimeComplexity("O(n)")
+	@TimeComplexity("O(lg n)")
+	/**
+	 * has while loop that goes while j >0 which will happen for height O(log n) of heap
+	 */
 	public void upheap(int j){
 		while(j > 0) {
 			int p = parent(j);
@@ -52,7 +55,10 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	 * The entry should be bubbled down to its appropriate position 
 	 * @param j move the entry at index j lower if necessary, to restore the heap property
 	 */
-	@TimeComplexity("O(n)")
+	@TimeComplexity("O(lg n)")
+	/**
+	 * Goes through height of heap which is lg n therefore alg is O(lg n)
+	 */
 	public void downheap(int j){
 		while(hasLeft(j)) {
 			int leftIndex = left(j);
@@ -86,7 +92,8 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		}
 	}
 
-	@TimeComplexity("O(n)")
+	@TimeComplexity("O(lg n)")
+	//calls upheap which is O(lg n)
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
 		checkKey(key);
@@ -103,7 +110,8 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		return heap.get(0);
 	}
 
-	@TimeComplexity("O(n)")
+	@TimeComplexity("O(lg n)")
+	//calls downheap which is O(lg n)
 	@Override
 	public Entry<K, V> removeMin() {
 		if(heap.isEmpty()) return null;

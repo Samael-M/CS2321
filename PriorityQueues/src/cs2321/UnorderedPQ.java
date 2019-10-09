@@ -10,7 +10,7 @@ import net.datastructures.*;
  * @author
  */
 
-//Page 367(385) in book
+@TimeComplexity("O(n)")
 public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 
 	private DoublyLinkedList<Entry<K, V>> Heap = new DoublyLinkedList();
@@ -56,6 +56,9 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 	}
 
 	@TimeComplexity("O(n)")
+	/**
+	 * uses for loop for each position in heap, everything in loop will happen for every n things in heap
+	 */
 	public Position<Entry<K, V>> findMin() {
 		Position<Entry<K, V>> small = Heap.first();
 		for(Position<Entry<K, V>> walk: Heap.positions()) {
@@ -67,6 +70,7 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 	}
 
 	@TimeComplexity("O(n)")
+	//calls findMin which is O(n)
 	@Override
 	public Entry<K, V> min() {
 		if(Heap.isEmpty()) return null;
@@ -74,6 +78,7 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 	}
 
 	@TimeComplexity("O(n)")
+	//calls findMin which is O(n)
 	@Override
 	public Entry<K, V> removeMin() {
 		if(Heap.isEmpty()) return null;

@@ -11,6 +11,7 @@ import net.datastructures.*;
  * @author Samuel Milner
  */
 
+@TimeComplexity("O(n)")
 public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 
 	private DoublyLinkedList<Entry<K, V>> Heap = new DoublyLinkedList();
@@ -48,6 +49,9 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 	}
 
 	@TimeComplexity("O(n)")
+	/**
+	 * there is a O(n) while loop, which goes through the DLL for n things before intial walk
+	 */
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
 		checkKey(key);
@@ -76,40 +80,6 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 		return Heap.remove(Heap.first());
 	}
 
-//	public void swap(int i, int j) {
-//		Entry tempi = Heap.getPositon(i).getElement();
-//		Heap.set(Heap.getPositon(i), Heap.getPositon(i).getElement());
-//		Heap.set(Heap.getPositon(j), tempi);
-//	}
-
-//	public void upheap(int i) {
-//		if(i == 0){ }
-//		else {
-//			int p = getParent(i);if(C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(p).getElement()) < 0) {
-//				swap(i, p);
-//				upheap(p);
-//			}
-//		}
-//	}
-
-//	public void downheap(int i) {
-//		int s = i;
-//		if(!hasLeftChild(i)) {}
-//		else {
-//			int c1 = getLeftChild(i);
-//			int c2 = getRightChild(i);
-//			if(hasLeftChild(i) && C.compare(Heap.getPositon(i).getElement(), Heap.getPositon(c1).getElement()) > 0){
-//				s = getLeftChild(i);
-//			}
-//			if(hasRightChild(i) && C.compare(Heap.getPositon(s).getElement(), Heap.getPositon(c2).getElement()) > 0){
-//				s = getRightChild(i);
-//			}
-//			if(i != s) {
-//					swap(i, s);
-//					downheap(s);
-//			}
-//		}
-//	}
 
 	@TimeComplexity("O(1)")
 	public int getParent(int i) {
