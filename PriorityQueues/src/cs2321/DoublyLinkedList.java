@@ -116,7 +116,7 @@ public class DoublyLinkedList<E> implements PositionalList<E> {
 	}
 	/**
 	 * Check data thats in next node of node given
-	 * @param Position<E> p, node to check data of next node
+	 * @param p, node to check data of next node
 	 * @return postion(node.getNext) data that is in node after p
 	 * @throws IllegalArgumentException if p is not valid
 	 */

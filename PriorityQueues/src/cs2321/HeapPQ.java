@@ -38,6 +38,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	 * The entry should be bubbled up to its appropriate position 
 	 * @param j move the entry at index j higher if necessary, to restore the heap property
 	 */
+	@TimeComplexity("O(n)")
 	public void upheap(int j){
 		while(j > 0) {
 			int p = parent(j);
@@ -51,7 +52,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	 * The entry should be bubbled down to its appropriate position 
 	 * @param j move the entry at index j lower if necessary, to restore the heap property
 	 */
-	
+	@TimeComplexity("O(n)")
 	public void downheap(int j){
 		while(hasLeft(j)) {
 			int leftIndex = left(j);
@@ -68,12 +69,15 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		}
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public int size() { return heap.size(); }
 
+	@TimeComplexity("O(1)")
 	@Override
 	public boolean isEmpty() { return heap.isEmpty(); }
 
+	@TimeComplexity("O(1)")
 	public boolean checkKey(K key) throws IllegalArgumentException {
 		try {
 			return(C.compare(key, key) == 0);
@@ -82,6 +86,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		}
 	}
 
+	@TimeComplexity("O(n)")
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
 		checkKey(key);
@@ -91,12 +96,14 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		return newest;
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public Entry<K, V> min() {
 		if(heap.isEmpty()) return null;
 		return heap.get(0);
 	}
 
+	@TimeComplexity("O(n)")
 	@Override
 	public Entry<K, V> removeMin() {
 		if(heap.isEmpty()) return null;
@@ -107,29 +114,32 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		return answer;
 	}
 
+	@TimeComplexity("O(1)")
 	public void swap(int i, int j) {
 		Entry<K, V> tempi = heap.get(i);
 		heap.set(i, heap.get(j));
 		heap.set(j, tempi);
 		((AdaptablePQEntry<K, V>) heap.get(i)).setIndex(i);
 		((AdaptablePQEntry<K, V>) heap.get(j)).setIndex(j);
-//		super.swap(i, j);
-//		((AdaptablePQEntry<K, V>) heap.get(i)).setIndex(i);
-//		((AdaptablePQEntry<K, V>) heap.get(j)).setIndex(j);
 	}
 
 	public int parent(int i) {
 		return (i - 1) / 2;
 	}
+	@TimeComplexity("O(1)")
 	public int left (int i) {
 		return 2 * i + 1;
 	}
+	@TimeComplexity("O(1)")
 	public int right(int i) {
 		return 2 * i + 2;
 	}
+	@TimeComplexity("O(1)")
 	private boolean hasLeft(int j) { return left(j) < heap.size(); }
+	@TimeComplexity("O(1)")
 	private boolean hasRight(int j) { return right(j) < heap.size(); }
 
+	@TimeComplexity("O(1)")
 	public AdaptablePQEntry<K, V> validate(Entry<K, V> entry) {
 		if(!(entry instanceof PQEntry)) throw new IllegalArgumentException("Invalid Entry");
 		AdaptablePQEntry<K, V> locator =( AdaptablePQEntry<K, V>) entry;
@@ -140,12 +150,14 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		return locator;
 	}
 
+	@TimeComplexity("O(1)")
 	public void bubble(int j) {
 		if (j > 0 && C.compare(heap.get(j).getKey(), heap.get(parent(j)).getKey()) > 0) {
 			upheap(j);
 		} else downheap(j);
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public void remove(Entry<K, V> entry) throws IllegalArgumentException {
 		AdaptablePQEntry<K, V> locator = validate(entry);
@@ -159,6 +171,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		}
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public void replaceKey(Entry<K, V> entry, K key) throws IllegalArgumentException {
 		AdaptablePQEntry<K, V> locator = validate(entry);
@@ -167,6 +180,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		bubble(locator.getIndex());
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public void replaceValue(Entry<K, V> entry, V value) throws IllegalArgumentException {
 		AdaptablePQEntry<K, V> locator = validate(entry);

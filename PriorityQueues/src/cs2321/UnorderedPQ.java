@@ -25,16 +25,19 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 		this.C = c;
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public int size() {
 		return Heap.size();
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public boolean isEmpty() {
 		return Heap.isEmpty();
 	}
 
+	@TimeComplexity("O(1)")
 	public boolean checkKey(K key) throws IllegalArgumentException {
 		try {
 			return(C.compare(key, key) == 0);
@@ -43,6 +46,7 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 		}
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
 		checkKey(key);
@@ -51,6 +55,7 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 		return newest;
 	}
 
+	@TimeComplexity("O(n)")
 	public Position<Entry<K, V>> findMin() {
 		Position<Entry<K, V>> small = Heap.first();
 		for(Position<Entry<K, V>> walk: Heap.positions()) {
@@ -61,12 +66,14 @@ public class UnorderedPQ<K,V> implements PriorityQueue<K,V> {
 		return small;
 	}
 
+	@TimeComplexity("O(n)")
 	@Override
 	public Entry<K, V> min() {
 		if(Heap.isEmpty()) return null;
 		return findMin().getElement();
 	}
 
+	@TimeComplexity("O(n)")
 	@Override
 	public Entry<K, V> removeMin() {
 		if(Heap.isEmpty()) return null;

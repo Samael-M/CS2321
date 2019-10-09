@@ -25,17 +25,20 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 	public OrderedPQ(Comparator<K> c) {
 		this.C = c;
 	}
-	
+
+	@TimeComplexity("O(1)")
 	@Override
 	public int size() {
 		return Heap.size();
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public boolean isEmpty() {
 		return Heap.isEmpty();
 	}
 
+	@TimeComplexity("O(1)")
 	public boolean checkKey(K key) throws IllegalArgumentException {
 		try {
 			return(C.compare(key, key) == 0);
@@ -44,6 +47,7 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 		}
 	}
 
+	@TimeComplexity("O(n)")
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
 		checkKey(key);
@@ -58,12 +62,14 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 		return newest;
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public Entry<K, V> min() {
 		if(Heap.isEmpty()) return null;
 		return Heap.first().getElement();
 	}
 
+	@TimeComplexity("O(1)")
 	@Override
 	public Entry<K, V> removeMin() {
 		if(Heap.isEmpty()) return null;
@@ -105,15 +111,19 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 //		}
 //	}
 
+	@TimeComplexity("O(1)")
 	public int getParent(int i) {
 		return (i - 1) / 2;
 	}
+	@TimeComplexity("O(1)")
 	public int getLeftChild (int i) {
 		return 2 * i + 1;
 	}
+	@TimeComplexity("O(1)")
 	public int getRightChild(int i) {
 		return 2 * i + 2;
 	}
+	@TimeComplexity("O(1)")
 	public boolean hasLeftChild(int i) {
 		try {
 			getLeftChild(i);
@@ -122,6 +132,7 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 		}
 		return true;
 	}
+	@TimeComplexity("O(1)")
 	public boolean hasRightChild(int i) {
 		try {
 			getRightChild(i);
