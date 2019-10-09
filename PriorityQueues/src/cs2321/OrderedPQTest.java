@@ -25,22 +25,25 @@ public class OrderedPQTest {
 
 	@Test
 	public void testSize() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Not yet implemented", 7, ordpq.size() );
 	}
 
 	@Test
 	public void testIsEmpty() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Not yet implemented", false, ordpq.isEmpty());
 	}
 
 	@Test
 	public void testInsert() {
-		fail("Not yet implemented"); // TODO
+		int s = ordpq.size();
+		ordpq.insert("Hell", 9);
+	    assertEquals("Not yet implemented", false, s == ordpq.size());
 	}
 
 	@Test
 	public void testMin() {
-		fail("Not yet implemented"); // TODO
+        Entry<String, Integer> test = ordpq.min();
+        assertEquals("Not yet implemented", "Balooga", test.getKey());
 	}
 
 	@Test

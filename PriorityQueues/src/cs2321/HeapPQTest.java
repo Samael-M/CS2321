@@ -23,14 +23,6 @@ public class HeapPQTest {
 		heappq.insert("Mukluks", 7);
 		heappq.insert("Macadamia", 9);
 
-//		heappq = new HeapPQ<Integer, String>();
-//		heappq.insert(16, "Bulbous Bouffant");
-//		heappq.insert(6, "Gazebo");
-//		heappq.insert(7, "Balooga");
-//		heappq.insert(8, "Galoshes");
-//		heappq.insert(6, "Eskimo");
-//		heappq.insert(7, "Mukluks");
-//		heappq.insert(9, "Macadamia");
 	}
 
 	@Test
@@ -57,38 +49,43 @@ public class HeapPQTest {
 
 	@Test
 	public void testSize() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Not yet implemented", 7, heappq.size());
 	}
 	
 
 	@Test
 	public void testIsEmpty() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Not yet implemented", false, heappq.isEmpty());
 	}
 
 	@Test
 	public void testInsert() {
-		fail("Not yet implemented"); // TODO
+		int s = heappq.size();
+		heappq.insert("Bazinga", 9);
+		assertEquals("Not yet implemented", false, s == heappq.size());
 	}
 
 	@Test
 	public void testMin() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Not yet implemented", "Balooga", heappq.min().getKey());
 	}
 
 	@Test
 	public void testRemove() {
-		fail("Not yet implemented"); // TODO
+		int s = heappq.size();
+		heappq.remove(heappq.min());
+		assertEquals("Not yet implemented", true, s == heappq.size() + 1);
 	}
 
 	@Test
 	public void testReplaceKey() {
-		fail("Not yet implemented"); // TODO
+		heappq.replaceKey(heappq.min(), "Baloo");
+		assertEquals("Not yet implemented", "Baloo", heappq.min().getKey());
 	}
 
 	@Test
 	public void testReplaceValue() {
-		fail("Not yet implemented"); // TODO
+		heappq.replaceValue(heappq.min(), 5);
+		assertEquals("Not yet implemented", "5", heappq.min().getValue().toString());
 	}
-
 }

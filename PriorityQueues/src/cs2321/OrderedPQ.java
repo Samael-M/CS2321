@@ -2,10 +2,7 @@ package cs2321;
 
 import java.util.Comparator;
 
-import javafx.geometry.Pos;
 import net.datastructures.*;
-import sun.font.CompositeStrike;
-
 /**
  * A PriorityQueue based on an ordered Doubly Linked List. 
  * 
@@ -17,7 +14,8 @@ import sun.font.CompositeStrike;
 public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 
 	private DoublyLinkedList<Entry<K, V>> Heap = new DoublyLinkedList();
-	Comparator C;
+	Comparator<K> C;
+
 
 	public OrderedPQ() {
 		super();
@@ -51,7 +49,7 @@ public class OrderedPQ<K,V> implements PriorityQueue<K,V> {
 		checkKey(key);
 		Entry<K, V> newest = new PQEntry<>(key, value);
 		Position<Entry<K, V>> walk = Heap.last();
-		while(walk != null && C.compare(newest, walk.getElement()) < 0)
+		while(walk != null && C.compare(newest.getKey(), walk.getElement().getKey()) < 0)
 			walk = Heap.before(walk);
 		if(walk == null)
 			Heap.addFirst(newest);

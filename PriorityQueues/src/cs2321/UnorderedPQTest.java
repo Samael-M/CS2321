@@ -25,22 +25,25 @@ public class UnorderedPQTest {
 
 	@Test
 	public void testSize() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Not yet implemented", 7, unordpq.size() );
 	}
 
 	@Test
 	public void testIsEmpty() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Not yet implemented", false, unordpq.isEmpty() );
 	}
 
 	@Test
 	public void testInsert() {
-		fail("Not yet implemented"); // TODO
+		int s = unordpq.size();
+		unordpq.insert("Hellow", 0);
+		assertEquals("Not yet implemented", false, s == unordpq.size() );
 	}
 
 	@Test
 	public void testMin() {
-		fail("Not yet implemented"); // TODO
+		Entry<String, Integer> test = unordpq.min();
+		assertEquals("Not yet implemented", "Balooga", test.getKey());
 	}
 
 	@Test

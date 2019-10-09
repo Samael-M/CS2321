@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="424db652-f60b-4d12-90cd-fcbd0b3a466b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PriorityQueues.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PriorityQueues.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/HeapPQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/HeapPQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/OrderedPQ$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/cs2321/OrderedPQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/OrderedPQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/UnorderedPQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/UnorderedPQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/UnorderedPQTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/UnorderedPQTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs2321/HeapPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/HeapPQ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs2321/HeapPQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/HeapPQTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs2321/OrderedPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/OrderedPQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/UnorderedPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/UnorderedPQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StackQueueApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StackQueueApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs2321/OrderedPQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/OrderedPQTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs2321/UnorderedPQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/UnorderedPQTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,53 +19,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-430284323">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.38" value="1" />
-          <entry key="project.open.time.49" value="1" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.open.time.51" value="1" />
-          <entry key="project.opened" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="34" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="5437" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQ.java">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="220">
+              <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
+                <element signature="e#1019#1020#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1319#1320#0" expanded="true" />
+                <element signature="e#1394#1395#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQTest.java">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQ.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="70">
+              <caret line="114" column="57" selection-start-line="114" selection-start-column="57" selection-end-line="114" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,18 +57,17 @@
       <find>last(</find>
       <find>Heap.size</find>
       <find>Entry</find>
+      <find>PQEntry</find>
+      <find>validat</find>
+      <find>validate</find>
+      <find>pqentry</find>
+      <find>min</find>
+      <find>swap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$/../../GameFinale/Project" value="PREVIEW" />
-      </map>
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -102,20 +75,16 @@
         <option value="$PROJECT_DIR$/src/cs2321/DefaultComparator.java" />
         <option value="$PROJECT_DIR$/src/cs2321/ArrayList.java" />
         <option value="$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java" />
-        <option value="$PROJECT_DIR$/src/cs2321/HeapPQTest.java" />
-        <option value="$PROJECT_DIR$/src/cs2321/HeapPQ.java" />
-        <option value="$PROJECT_DIR$/src/cs2321/UnorderedPQ.java" />
         <option value="$PROJECT_DIR$/src/cs2321/OrderedPQ.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/UnorderedPQ.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/UnorderedPQTest.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/OrderedPQTest.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/HeapPQ.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/HeapPQTest.java" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -165,8 +134,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570571098711" />
-    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570584751374" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -186,20 +155,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OrderedPQTest">
-    <configuration name="DoublyLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cs2321.DoublyLinkedList" />
-      <module name="PriorityQueues" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cs2321.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.HeapPQTest">
     <configuration name="HeapPQTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PriorityQueues" />
       <extension name="coverage">
@@ -210,6 +166,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cs2321" />
       <option name="MAIN_CLASS_NAME" value="cs2321.HeapPQTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -224,6 +181,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cs2321" />
       <option name="MAIN_CLASS_NAME" value="cs2321.OrderedPQTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -238,6 +196,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="cs2321" />
       <option name="MAIN_CLASS_NAME" value="cs2321.UnorderedPQTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnorderedPQTest.testMin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PriorityQueues" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs2321.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cs2321" />
+      <option name="MAIN_CLASS_NAME" value="cs2321.UnorderedPQTest" />
+      <option name="METHOD_NAME" value="testMin" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -259,19 +234,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DoublyLinkedList" />
       <item itemvalue="JUnit.HeapPQTest" />
       <item itemvalue="JUnit.UnorderedPQTest" />
       <item itemvalue="JUnit.UnorderedPQTest.testRemoveMin" />
       <item itemvalue="JUnit.OrderedPQTest" />
+      <item itemvalue="JUnit.UnorderedPQTest.testMin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderedPQTest" />
-        <item itemvalue="JUnit.UnorderedPQTest.testRemoveMin" />
-        <item itemvalue="JUnit.UnorderedPQTest" />
         <item itemvalue="JUnit.HeapPQTest" />
-        <item itemvalue="Application.DoublyLinkedList" />
+        <item itemvalue="JUnit.OrderedPQTest" />
+        <item itemvalue="JUnit.UnorderedPQTest" />
+        <item itemvalue="JUnit.UnorderedPQTest.testMin" />
+        <item itemvalue="JUnit.UnorderedPQTest.testRemoveMin" />
       </list>
     </recent_temporary>
   </component>
@@ -290,49 +265,50 @@
       <workItem from="1570317782117" duration="4043000" />
       <workItem from="1570413489542" duration="2571000" />
       <workItem from="1570556816576" duration="7197000" />
+      <workItem from="1570577099151" duration="7421000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HeapPQTest - 2019.10.08 at 17h 22m 07s.xml">
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 13m 50s.xml">
       <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HeapPQTest - 2019.10.08 at 17h 22m 38s.xml">
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 16m 25s.xml">
       <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UnorderedPQTest - 2019.10.08 at 17h 22m 51s.xml">
-      <configuration name="UnorderedPQTest" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 16m 45s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UnorderedPQTest - 2019.10.08 at 17h 24m 42s.xml">
-      <configuration name="UnorderedPQTest" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 17m 05s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UnorderedPQTest - 2019.10.08 at 17h 25m 07s.xml">
-      <configuration name="UnorderedPQTest" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 20m 30s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UnorderedPQTest - 2019.10.08 at 17h 26m 45s.xml">
-      <configuration name="UnorderedPQTest" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 22m 44s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UnorderedPQTest_testRemoveMin - 2019.10.08 at 17h 31m 14s.xml">
-      <configuration name="UnorderedPQTest.testRemoveMin" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 27m 34s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UnorderedPQTest_testRemoveMin - 2019.10.08 at 17h 32m 02s.xml">
-      <configuration name="UnorderedPQTest.testRemoveMin" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 30m 20s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UnorderedPQTest_testRemoveMin - 2019.10.08 at 17h 36m 59s.xml">
-      <configuration name="UnorderedPQTest.testRemoveMin" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 30m 58s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderedPQTest - 2019.10.08 at 17h 37m 45s.xml">
-      <configuration name="OrderedPQTest" configurationId="JUnit" />
+    <history-entry file="HeapPQTest - 2019.10.08 at 21h 32m 16s.xml">
+      <configuration name="HeapPQTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28525000" />
+    <option name="totallyTimeSpent" value="35946000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21544716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -340,9 +316,10 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32939914" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33037037" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -351,7 +328,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32939914" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3288889" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -363,7 +341,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21544716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -371,34 +349,33 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32939914" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32939914" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3288889" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39914164" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3288889" />
+      <window_info anchor="right" id="Maven" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -468,26 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/DoublyLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="873">
@@ -495,41 +452,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs2321/UnorderedPQTest.java">
+    <entry file="file://$PROJECT_DIR$/src/cs2321/UnorderedPQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="15">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
-            <element signature="e#891#892#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs2321/UnorderedPQ.java">
+    <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        <state relative-caret-position="15">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/UnorderedPQTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="45" column="70" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="70" />
+          <folding>
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="276">
+          <caret line="45" column="70" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="70" />
+          <folding>
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQ.java">
+    <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="70">
+          <caret line="114" column="57" selection-start-line="114" selection-start-column="57" selection-end-line="114" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
           </folding>
         </state>
       </provider>

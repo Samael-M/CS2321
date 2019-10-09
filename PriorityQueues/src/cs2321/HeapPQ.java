@@ -12,6 +12,7 @@ import net.datastructures.*;
 
 public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 
+
 	private ArrayList<Entry<K, V>> heap = new ArrayList<>();
 	Comparator<K> C;
 
@@ -35,7 +36,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 
 	/**
 	 * The entry should be bubbled up to its appropriate position 
-	 * @param int move the entry at index j higher if necessary, to restore the heap property
+	 * @param j move the entry at index j higher if necessary, to restore the heap property
 	 */
 	public void upheap(int j){
 		while(j > 0) {
@@ -84,7 +85,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
 		checkKey(key);
-		Entry<K, V> newest = new PQEntry<>(key, value);
+		Entry<K, V> newest = new AdaptablePQEntry<>(key, value, heap.size());
 		heap.add(size(), newest);
 		upheap(heap.size() - 1);
 		return newest;
@@ -110,6 +111,11 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 		Entry<K, V> tempi = heap.get(i);
 		heap.set(i, heap.get(j));
 		heap.set(j, tempi);
+		((AdaptablePQEntry<K, V>) heap.get(i)).setIndex(i);
+		((AdaptablePQEntry<K, V>) heap.get(j)).setIndex(j);
+//		super.swap(i, j);
+//		((AdaptablePQEntry<K, V>) heap.get(i)).setIndex(i);
+//		((AdaptablePQEntry<K, V>) heap.get(j)).setIndex(j);
 	}
 
 	public int parent(int i) {
@@ -165,6 +171,5 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 	public void replaceValue(Entry<K, V> entry, V value) throws IllegalArgumentException {
 		AdaptablePQEntry<K, V> locator = validate(entry);
 		locator.setValue(value);
-		
 	}
 }
