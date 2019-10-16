@@ -6,7 +6,7 @@ import net.datastructures.List;
 public class ArrayList<E> implements List<E> {
 
 	//instance varaibles
-	private int CAPACITY = 16;
+	private int CAPACITY;
 	private E[] data;
 	private int size = 0;
 
@@ -15,6 +15,7 @@ public class ArrayList<E> implements List<E> {
 	}
 
 	public ArrayList(int capacity) {
+		CAPACITY = capacity;
 		data = (E[]) new Object[capacity];
 	}
 
@@ -75,6 +76,7 @@ public class ArrayList<E> implements List<E> {
 		data[i] = e;
 		size++;
 	}
+
 	/**
 	 * Removes data from index i and shifts all data to the right of i to the left
 	 * @param int i, index to remove data from
