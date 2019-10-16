@@ -13,7 +13,7 @@ import net.datastructures.*;
 public class MaxHeap<K,V> {//implements AdaptablePriorityQueue<K,V> {
 
 
-    private ArrayList<Entry<K, V>> heap = new ArrayList<>();
+    private ArrayList<Entry<K, V>> heap;//  = new ArrayList<>();
     Comparator<K> C;
 
     private class AdaptablePQEntry<K, V> extends PQEntry<K, V> {
@@ -26,10 +26,12 @@ public class MaxHeap<K,V> {//implements AdaptablePriorityQueue<K,V> {
         public void setIndex(int j) {index = j;}
     }
 
-    public MaxHeap() {
+    public MaxHeap(int size) {
         super();
         C = new DefaultComparator<K>();
+        heap = new ArrayList<>(size);
     }
+
     public MaxHeap(Comparator<K> c) {
         this.C = c;
     }
