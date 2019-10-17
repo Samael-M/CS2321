@@ -10,6 +10,7 @@ public class FractionalKnapsackTest {
 	int[][] sack = {{4, 12}, {8, 32}, {2, 40}, {6, 30}, {1, 50}};
 	int[][] sack2 = {};
 	int[][] sack3 = {{3, 6}, {1, 1}};
+	int[][] test = {};
 
 	@Before
 	public void setUp() throws Exception {

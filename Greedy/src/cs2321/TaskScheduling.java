@@ -22,7 +22,7 @@ public class TaskScheduling {
 			int[] smallest = task.removeMin().getValue();
 			if (Machines.isEmpty()) {
 				Machines.add(0, smallest[1]);
-				machines += 1;
+				machines++;
 			}
 			else {
 				int j = -1;
@@ -36,7 +36,7 @@ public class TaskScheduling {
 				}
 				else {
 					Machines.add(machines, smallest[1]);
-					machines += 1;
+					machines++;
 				}
 			}
 
