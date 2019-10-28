@@ -15,10 +15,12 @@ public class PQSort<K extends Comparable<K>> {
 	 * then call PQ's removeMin repeatedly, and overwrite the data in the array
 	 */
 	protected void sort(K[] kArray, PriorityQueue<K,K> pq) {
-		
-		//TODO: implement this sort.
-		
-		
+		for(int i = 0; i <= kArray.length - 1; i++) {
+			pq.insert(kArray[i], null);
+		}
+		for(int i = 0; i <= kArray.length - 1; i++) {
+			kArray[i] =  pq.removeMin().getKey();
+		}
 	}
 
 	

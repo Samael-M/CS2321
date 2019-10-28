@@ -2,30 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="424db652-f60b-4d12-90cd-fcbd0b3a466b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Greedy/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/cs2321/FractionalKnapsack.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/cs2321/FractionalKnapsack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/cs2321/FractionalKnapsackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/cs2321/FractionalKnapsackTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/cs2321/TaskScheduling.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/cs2321/TaskScheduling.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/cs2321/TaskSchedulingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/cs2321/TaskSchedulingTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/AdaptablePriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/AdaptablePriorityQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/BinaryTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/CircularQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/CircularQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Deque.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Deque.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Entry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/List.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/PositionalList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/PositionalList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/PriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/PriorityQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Queue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/SortedMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/SortedMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Stack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/bin/net/datastructures/Vertex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Greedy/src/cs2321/TaskSchedulingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Greedy/src/cs2321/TaskSchedulingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/src/cs2321/HeapPQSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/src/cs2321/HeapPQSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/src/cs2321/InPlaceInsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/src/cs2321/InPlaceInsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/src/cs2321/InPlaceSelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/src/cs2321/InPlaceSelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/src/cs2321/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/src/cs2321/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/src/cs2321/OrderedPQSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/src/cs2321/OrderedPQSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/src/cs2321/PQSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/src/cs2321/PQSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorts/src/cs2321/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorts/src/cs2321/QuickSort.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +22,7 @@
     <session id="-430284323">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.28" value="1" />
@@ -47,8 +31,9 @@
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.51" value="2" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -65,56 +50,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQ.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="99" column="42" selection-start-line="99" selection-start-column="42" selection-end-line="99" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs2321/UnorderedPQ.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQ.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -157,7 +93,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -169,8 +105,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,6 +127,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -202,7 +138,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570594340842" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Greedy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -332,6 +268,7 @@
       <workItem from="1571175937664" duration="121000" />
       <workItem from="1571176491328" duration="271000" />
       <workItem from="1571179456711" duration="33000" />
+      <workItem from="1572300133850" duration="1055000" />
     </task>
     <servers />
   </component>
@@ -368,13 +305,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33133000" />
+    <option name="totallyTimeSpent" value="34188000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -538,29 +475,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="99" column="42" selection-start-line="99" selection-start-column="42" selection-end-line="99" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs2321/UnorderedPQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
+        <state relative-caret-position="833">
           <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -570,8 +487,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/HeapPQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
+        <state relative-caret-position="476">
           <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/UnorderedPQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/OrderedPQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="99" column="42" selection-start-line="99" selection-start-column="42" selection-end-line="99" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
