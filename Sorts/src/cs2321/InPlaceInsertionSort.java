@@ -16,10 +16,9 @@ public class InPlaceInsertionSort<K extends Comparable<K>> implements Sorter<K> 
 			j = i - 1;
 			while(j >= 0 && C.compare(array[j], cur) > 0) {
 				array[j + 1] = array[j];
-					j--;
+				j--;
 			}
 			array[j + 1] = cur;
 		}
 	}
-
 }

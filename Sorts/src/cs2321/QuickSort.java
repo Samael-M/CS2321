@@ -4,37 +4,28 @@ public class QuickSort<E extends Comparable<E>> implements Sorter<E> {
 	DefaultComparator C = new DefaultComparator();
 
 	public void sort(E[] array) {
-		sort(array, 0, array.length);
+		sort(array, 0, array.length - 1);
 	}
 
-	public void sort(E[] array, int p, int q) {
-		int r;
-		if(p < q) {
-			r = partition(array, p, q);
-			sort(array, p, r -1);
-			sort(array, r +1, q);
+	public void sort(E[] array, int p, int r) {
+		if(p < r) {
+			int q = partition(array, p, r);
+			sort(array, p, q - 1);
+			sort(array, q + 1, r);
 		}
 	}
 
-	public int partition(E[] array, int p, int q){
-		int i = p;
-		int j = q - 1;
-		E pivot = array[q];
-		while (i <= j) {
-			while(i <= j && C.compare(array[i], pivot) < 0) {
-	 			i++;
-			}
-			while(i<= j && C.compare(array[j], pivot) > 0) {
-				j--;
-			}
-			if(i < j) {
-				swap(array, i, j);
+	public int partition(E[] array, int p, int r){
+		int i = p - 1;
+		E pivot = array[r];
+		for(int j = p; j <= r - 1; j++) {
+			if(C.compare(array[j], pivot) < 0) {
 				i++;
-				j--;
+				swap(array, i, j);
 			}
 		}
-		swap(array, i, q);
-		return i;
+		swap(array, r, i + 1);
+		return i + 1;
 	}
 
 	public void swap(E[] array, int i, int j) {

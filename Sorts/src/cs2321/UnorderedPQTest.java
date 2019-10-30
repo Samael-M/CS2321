@@ -13,7 +13,8 @@ public class UnorderedPQTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		unordpq = new UnorderedPQ<String, Integer>();
+		//unordpq = new UnorderedPQ<String, Integer>();
+		unordpq = new OrderedPQ<String, Integer>();
 		unordpq.insert("Bulbous Bouffant", 16);
 		unordpq.insert("Gazebo", 6);
 		unordpq.insert("Balooga", 7);

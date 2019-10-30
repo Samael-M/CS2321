@@ -5,7 +5,9 @@ public class OrderedPQSort<K extends Comparable<K>> extends PQSort<K> implements
 
 	@Override
 	public void sort(K[] array) {
-
+		PQSort sort = new PQSort();
+		OrderedPQ pq = new OrderedPQ();
+		sort.sort(array, pq);
 		
 	}
 }

@@ -7,9 +7,12 @@ public class QuickSortTest{
 	 Sorter <Integer> sorter;
 	
 	@Before
-	public void setup() {
-		sorter = new  QuickSort<Integer>();
-	}
+	//public void setup() { sorter = new InPlaceHeapSort<>(); }
+	//public void setup() { sorter = new InPlaceSelectionSort<>(); }
+	//public void setup() { sorter = new InPlaceInsertionSort<>(); }
+	//public void setup() { sorter = new MergeSort<>(); }
+	//public void setup() { sorter = new QuickSort<>(); }
+	//public void setup() { sorter = new HeapPQSort<>(); }
 	
 	@Test
 	public void test1() {

@@ -4,8 +4,9 @@ public class UnorderedPQSort<K extends Comparable<K>> extends PQSort<K> implemen
 
 	@Override
 	public void sort(K[] array) {
-		// TODO Auto-generated method stub
-		
+		PQSort sort = new PQSort();
+		UnorderedPQ pq = new UnorderedPQ();
+		sort.sort(array, pq);
 	}
 
 }
