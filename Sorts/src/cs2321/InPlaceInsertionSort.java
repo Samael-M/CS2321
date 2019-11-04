@@ -7,7 +7,10 @@ public class InPlaceInsertionSort<K extends Comparable<K>> implements Sorter<K> 
 	 * @param array - Array to sort
 	 */
 	DefaultComparator C = new DefaultComparator();
-
+	@TimeComplexity("O(n^2)")
+	/**
+	 * First for loop runs n times from 0 to n, nested for loop also runs n times, from j = n-1 to 0, since its nested, its n*n o rn^2
+	 */
 	public void sort(K[] array) {
 		K cur;
 		int j;

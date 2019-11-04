@@ -1,0 +1,9 @@
+Sort,Time
+Selection Sort,9528
+Insertion Sort,13313
+Unordered PQ Sort,30727
+Ordered PQ Sort,16612
+Heap PQ Sort,98
+In Place Heap Sort,39
+Quick Sort,30
+Merge Sort,72

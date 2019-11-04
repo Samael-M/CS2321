@@ -8,6 +8,11 @@ public class InPlaceHeapSort<K extends Comparable<K>> implements Sorter<K> {
 	 * @param array - Array to sort
 	 */
 	DefaultComparator C = new DefaultComparator();
+	@TimeComplexity("O(n lg n)")
+	/**
+	 * first for loop builds heap, and goes through the height of it which is log n, second for loop goes through
+	 * array and swaps things and runs n times
+	 */
 	public void sort(K[] array) {
 		//buildMaxHeap(array, array.length);
 		for (int i = array.length / 2 - 1; i >= 0; i--)

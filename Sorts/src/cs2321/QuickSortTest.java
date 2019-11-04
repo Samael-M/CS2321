@@ -7,10 +7,11 @@ public class QuickSortTest{
 	 Sorter <Integer> sorter;
 	
 	@Before
+	// These are the steup sto test each sorting algorithm, uncomment the alg you need to test
 	//public void setup() { sorter = new InPlaceHeapSort<>(); }
 	//public void setup() { sorter = new InPlaceSelectionSort<>(); }
 	//public void setup() { sorter = new InPlaceInsertionSort<>(); }
-	//public void setup() { sorter = new MergeSort<>(); }
+	public void setup() { sorter = new MergeSort<>(); }
 	//public void setup() { sorter = new QuickSort<>(); }
 	//public void setup() { sorter = new HeapPQSort<>(); }
 	

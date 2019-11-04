@@ -1,59 +1,116 @@
 package cs2321;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Random;
+
 /**
  * A test driver for Sorts.
- * 
+ * <p>
  * Course: CS2321 Section ALL
- * Assignment: #4
- * @author Instructor
+ * Assignment: #5
+ *
+ * @author Mark Washington
  */
 
-public class SortTiming {
+public class SortTiming
+{
 
-	public static void main(String [] args){
-		Integer[]  data = {5, 3, 7, 2, 9, 3};
-		double avgtime;
-		
-		Integer[] testee;
-		
-		//#Examples of using testSort
-		testee= data.clone();
-		avgtime = testSort(testee, new InPlaceInsertionSort<Integer>());	
-		System.out.println("InPlaceInsertion: " + avgtime);
-		
-		testee= data.clone();
-		avgtime = testSort(testee, new HeapPQSort<Integer>());	
-		System.out.println("HeapPQSort: " + avgtime);
-		
-	}
+    public static void main(String[] args) throws IOException
+    {
+        PrintWriter csvWriter = new PrintWriter(new File("AllSorts.csv"));
+        Integer[] timingTestArray = new Integer[100000];
 
-	/**
-	 * Algorithm: testSort
-	 * @param arr - an array of Integers to use for empirical measurement of a sort
-	 * @param sortClass - the Class representing the sorting algorithm to be run
-	 * @param iterations - the number of times the sort is repeated
-	 * @return average time taken for a single execution of a sort (in nanoseconds)
-	 * 
-	 * A copy (clone) of the array is made to test over, so that the original may be reused.
-	 */
-	public static double testSort(Integer[] arr, Sorter<Integer> sortClass){
-		long startTime = 0, endTime = 0;
-		int samples = 0;
+        Random random = new Random();
 
-		System.gc();
-		startTime = System.nanoTime();
-		//#repeated measurements (no less than .5 seconds worth of repeats)
-		do{
-			//create a copy of the array for each test case
-			Integer[] testCase = arr.clone();
-			//the sorting algorithm, based on the Sorter Class
-			sortClass.sort(testCase);
-			
-			samples++;
-			endTime = System.nanoTime();
-		}while(endTime - startTime < 500000000);
-				
-		return (double)(endTime - startTime) / samples;
-	}
-	
+        for (int i = 0; i < timingTestArray.length; i++)
+        {
+            timingTestArray[i] = random.nextInt(100000);
+        }
+
+        Sorter<Integer> selectionSorter = new InPlaceSelectionSort<>();
+        Sorter<Integer> insertionSorter = new InPlaceInsertionSort<>();
+        Sorter<Integer> unorderedPQSorter = new UnorderedPQSort<>();
+        Sorter<Integer> orderedPQSorter = new OrderedPQSort<>();
+        Sorter<Integer> heapPQSorter = new HeapPQSort<>();
+        Sorter<Integer> heapSorter = new InPlaceHeapSort<>();
+        Sorter<Integer> quickSorter = new QuickSort<>();
+        Sorter<Integer> mergeSorter = new MergeSort<>();
+
+        System.gc();
+
+        long selectionSortTime = sortTiming(selectionSorter, timingTestArray.clone());
+        long insertionSortTime = sortTiming(insertionSorter, timingTestArray.clone());
+        long unorderedPQSortTime = sortTiming(unorderedPQSorter, timingTestArray.clone());
+        long orderedPQSortTime = sortTiming(orderedPQSorter, timingTestArray.clone());
+        long heapPQSortTime = sortTiming(heapPQSorter, timingTestArray.clone());
+        long heapSortTime = sortTiming(heapSorter, timingTestArray.clone());
+        long quickSortTime = sortTiming(quickSorter, timingTestArray.clone());
+        long mergeSortTime = sortTiming(mergeSorter, timingTestArray.clone());
+
+
+        // Write all sorts to csv file
+        csvWriter.println("Sort,Time");
+
+        csvWriter.println("Selection Sort," + selectionSortTime);
+        System.out.println("Selection sort finished");
+
+        csvWriter.println("Insertion Sort," + insertionSortTime);
+        System.out.println("Insertion sort finished");
+
+        csvWriter.println("Unordered PQ Sort," + unorderedPQSortTime);
+        System.out.println("Unordered PQ sort finished");
+
+        csvWriter.println("Ordered PQ Sort," + orderedPQSortTime);
+        System.out.println("Ordered PQ sort finished");
+
+        csvWriter.println("Heap PQ Sort," + heapPQSortTime);
+        System.out.println("Heap PQ sort finished");
+
+        csvWriter.println("In Place Heap Sort," + heapSortTime);
+        System.out.println("In Place Heap Sort finished");
+
+        csvWriter.println("Quick Sort," + quickSortTime);
+        System.out.println("Quick sort finished");
+
+        csvWriter.println("Merge Sort," + mergeSortTime);
+        System.out.println("Merge sort finished");
+
+        csvWriter.close();
+
+        // Write fast sorts to csv file
+        csvWriter = new PrintWriter(new File("FastSorts.csv"));
+        csvWriter.println("Sort,Time");
+        csvWriter.println("Heap PQ Sort," + heapPQSortTime);
+        System.out.println("Heap PQ sort finished");
+
+        csvWriter.println("In Place Heap Sort," + heapSortTime);
+        System.out.println("In Place Heap Sort finished");
+
+        csvWriter.println("Merge Sort," + mergeSortTime);
+        System.out.println("Merge sort finished");
+
+        csvWriter.println("Quick Sort," + quickSortTime);
+        System.out.println("Quick sort finished");
+
+        csvWriter.close();
+    }
+
+    public static long sortTiming(Sorter<Integer> sorter, Integer[] sortTimingArray)
+    {
+        long startTime;
+        long endTime;
+        long deltaTime;
+
+        startTime = System.nanoTime();
+
+        sorter.sort(sortTimingArray);
+
+        endTime = System.nanoTime();
+        deltaTime = (endTime - startTime) / 1000000;
+
+        return deltaTime;
+    }
+
 }

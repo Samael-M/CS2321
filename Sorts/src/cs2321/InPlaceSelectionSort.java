@@ -7,7 +7,10 @@ public class InPlaceSelectionSort<K extends Comparable<K>> implements Sorter<K> 
 	 * @param array - Array to sort
 	 */
 	DefaultComparator C = new DefaultComparator();
-	
+	@TimeComplexity("O(n^2)")
+	/**
+	 * both the first for loop and the nested one run a O(n) time, which makes n^2. first loop runs from 0 to n and second runs from j = 1 to n -1
+	 */
 	public void sort(K[] array) {
 		int minIndex;
 		for(int i = 0; i <= array.length - 1; i++) {

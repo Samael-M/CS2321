@@ -2,7 +2,7 @@ package cs2321;
 public class QuickSort<E extends Comparable<E>> implements Sorter<E> {
 
 	DefaultComparator C = new DefaultComparator();
-
+	@TimeComplexity("O(n lg n)")
 	public void sort(E[] array) {
 		sort(array, 0, array.length - 1);
 	}
