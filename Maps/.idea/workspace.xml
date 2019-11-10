@@ -16,7 +16,10 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../List" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -30,6 +33,61 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JUnit.oneEntryBST">
+    <configuration name="All in Maps" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fourNodesLBT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="fourNodesLBT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="oneEntryBST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="oneEntryBST" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="rootOnlyLBT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="rootOnlyLBT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sixEntryBST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.oneEntryBST" />
+        <item itemvalue="JUnit.sixEntryBST" />
+        <item itemvalue="JUnit.rootOnlyLBT" />
+        <item itemvalue="JUnit.fourNodesLBT" />
+        <item itemvalue="JUnit.All in Maps" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -41,6 +99,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572906901301</updated>
       <workItem from="1572906902788" duration="266000" />
+      <workItem from="1573273079260" duration="4602000" />
+      <workItem from="1573344481657" duration="10067000" />
     </task>
     <servers />
   </component>
@@ -52,7 +112,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

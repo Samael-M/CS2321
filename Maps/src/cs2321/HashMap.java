@@ -20,7 +20,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	
 	/**
 	 * Constructor that takes a hash size
-	 * @param hashtable size: the number of buckets to initialize 
+	 * @param hashtablesize size: the number of buckets to initialize
 	 */
 	public HashMap(int hashtablesize) {
 		// TODO Add necessary initialization
@@ -55,14 +55,12 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return table.length;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return table.length == 0;
 	}
 
 	@Override

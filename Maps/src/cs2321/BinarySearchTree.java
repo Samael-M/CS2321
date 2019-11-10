@@ -1,7 +1,13 @@
 package cs2321;
 
+import javafx.geometry.Pos;
 import net.datastructures.Entry;
+import net.datastructures.Position;
 import net.datastructures.SortedMap;
+
+import javax.crypto.spec.PSource;
+import javax.management.openmbean.CompositeDataSupport;
+import java.lang.reflect.Array;
 
 
 public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V> implements SortedMap<K,V> {
@@ -14,7 +20,16 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	 * default constructor
 	 */
 	public BinarySearchTree() {
-		// TODO Add necessary initialization
+		tree = new LinkedBinaryTree<>();
+		tree.addRoot(null);
+	}
+
+	public boolean checkKey(K key) throws IllegalArgumentException {
+		try {
+			return (key.compareTo(key) == 0);
+		} catch (ClassCastException e) {
+			throw new IllegalArgumentException("Incompatiable key");
+		}
 	}
 	
 	/* 
@@ -24,47 +39,96 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	public LinkedBinaryTree<Entry<K,V>> getTree() {
 		return tree;
 	}
-	
+	Position<Entry<K,V>> root() { return tree.root(); }
+
+	public void expandExternal(Position<Entry<K, V>> p, Entry<K, V> entry) {
+		tree.set(p, entry);
+		tree.addLeft(p, null);
+		tree.addRight(p, null);
+	}
+
 	@Override
 	public int size(){
-		// TODO Auto-generated method stub
-		return 0;
+		return (tree.size() - 1) / 2;
 	}
 	@Override
 	public V get(K key) {
-		// TODO Auto-generated method stub
-		return null;
+		checkKey(key);
+		Position<Entry<K, V>> p = treeSearch(root(), key);
+		if (tree.isExternal(p)) return null;
+		return p.getElement().getValue();
+	}
+
+	public Position<Entry<K, V>> treeSearch(Position<Entry<K, V>> p , K key) {
+		if (tree.isExternal(p))  return p;
+		int comp = key.compareTo(p.getElement().getKey());
+		if (comp == 0) return p ;
+		else if (comp < 0) return treeSearch(tree.left(p), key);
+		else return treeSearch(tree.right(p), key);
 	}
 
 	@Override
 	public V put(K key, V value) {
-		// TODO Auto-generated method stub
-		return null;
+		checkKey(key);
+		Entry<K, V> newEntry = new mapEntry<>(key, value);
+		Position<Entry<K, V>> p = treeSearch(root(), key);
+		if(tree.isExternal(p)) {
+			expandExternal(p, newEntry);
+			return null;
+		} else {
+			V old = p.getElement().getValue();
+			tree.set(p, newEntry);
+			return old;
+		}
 	}
 
 	@Override
 	public V remove(K key) {
-		// TODO Auto-generated method stub
-		return null;
+		checkKey(key);
+		Position<Entry<K, V>> p = treeSearch(root(), key);
+		if(tree.isExternal(p)) {
+			return null;
+		} else {
+			V old = p.getElement().getValue();
+			if(tree.isInternal(tree.left(p)) && tree.isInternal(tree.right(p))) {
+				Position<Entry<K, V>> replacement = treeMax(tree.left(p));
+				tree.set(p, replacement.getElement());
+				p = replacement;
+			}
+			Position<Entry<K, V>> leaf = (tree.isExternal(tree.left(p)) ? tree.left(p) : tree.right(p));
+			Position<Entry<K, V>> sib = tree.sibling(leaf);
+			tree.remove(leaf);
+			tree.remove(p);
+			return old;
+		}
+	}
+
+	public Position<Entry<K, V>> treeMax(Position<Entry<K, V>> p) {
+		Position<Entry<K, V>> walk = p;
+		while(tree.isInternal(walk))
+			walk = tree.right(walk);
+		return tree.parent(walk);
 	}
 
 
 	@Override
 	public Iterable<Entry<K, V>> entrySet() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Entry<K, V>> buffer = new ArrayList<>(size());
+//		for (Position<Entry<K, V>> p : tree.inorder)
+//			if (tree.isInternal(p)) buffer.addLast(p.getElement());
+		return buffer;
 	}
 
 	@Override
 	public Entry<K, V> firstEntry() {
-		// TODO Auto-generated method stub
-		return null;
+		if(isEmpty()) return null;
+		return root().getElement();
 	}
 
 	@Override
 	public Entry<K, V> lastEntry() {
-		// TODO Auto-generated method stub
-		return null;
+		if(isEmpty()) return null;
+		return treeMax(root()).getElement();
 	}
 
 	@Override
@@ -75,13 +139,25 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 
 	@Override
 	public Entry<K, V> floorEntry(K key)  {
-		// TODO Auto-generated method stub
+		checkKey(key);
+		Position<Entry<K, V>> p = treeSearch(root(), key);
+		if(tree.isInternal(p)) return p.getElement();
+		while (!tree.isRoot(p)) {
+			if (p == tree.right(tree.parent(p))) return tree.parent(p).getElement();
+			else p = tree.parent(p);
+		}
 		return null;
 	}
 
 	@Override
 	public Entry<K, V> lowerEntry(K key) {
-		// TODO Auto-generated method stub
+		checkKey(key);
+		Position<Entry<K, V>> p = treeSearch(root(), key);
+		if(tree.isInternal(p) && tree.isInternal(tree.right(p))) return treeMax(tree.left(p)).getElement();
+		while (!tree.isRoot(p)) {
+			if (p == tree.right(tree.parent(p))) return tree.parent(p).getElement();
+			else p = tree.parent(p);
+		}
 		return null;
 	}
 
@@ -94,15 +170,29 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	@Override
 	public Iterable<Entry<K, V>> subMap(K fromKey, K toKey)
 			throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Entry<K, V>> buffer = new ArrayList<>(size());
+		if (fromKey.compareTo(toKey) < 0) subMapRecurse(fromKey, toKey, root(), buffer);
+		return buffer;
+	}
+
+	public void subMapRecurse(K fromKey, K toKey, Position<Entry<K, V>> p, ArrayList<Entry<K, V>> buffer) {
+		if (tree.isInternal(p)) {
+			if(p.getElement().getKey().compareTo(fromKey) < 0) subMapRecurse(fromKey, toKey, tree.right(p), buffer);
+			else {
+				subMapRecurse(fromKey, toKey, tree.left(p), buffer);
+				if (p.getElement().getKey().compareTo(toKey) < 0) {
+					buffer.addLast(p.getElement());
+					subMapRecurse(fromKey, toKey, tree.right(p), buffer);
+				}
+			}
+		}
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return tree.isEmpty();
 	}
+
 
 	
 

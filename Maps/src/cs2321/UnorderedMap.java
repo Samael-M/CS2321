@@ -3,6 +3,7 @@ package cs2321;
 
 import net.datastructures.Entry;
 import net.datastructures.Map;
+import net.datastructures.Position;
 
 public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 	
@@ -11,7 +12,8 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 	 * private ArrayList<Entry<K,V>> table; 
 	 * private DoublyLinkedList<Entry<K,V>> table;
 	 */
-	
+	private DoublyLinkedList<Entry<K,V>> table;
+
 	public UnorderedMap() {
 		// TODO Auto-generated constructor stub
 	}
@@ -19,31 +21,47 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return table.size();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return table.isEmpty();
 	}
 
 	@Override
 	public V get(K key) {
-		// TODO Auto-generated method stub
+		for (Entry<K, V> e: table) {
+			if (e.getKey().equals(key)) {
+				return e.getValue();
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public V put(K key, V value) {
-		// TODO Auto-generated method stub
+		for (Entry e: table) {
+			if (e.getKey() ==  key) {
+				V oldV = (V) e.getValue();
+				//e.setValue(value);
+				return oldV;
+			}
+			table.addLast(e);
+		}
 		return null;
 	}
 
 	@Override
 	public V remove(K key) {
-		// TODO Auto-generated method stub
+		for (Position p: table.positions()) {
+			Entry<K, V> e = (Entry<K, V>) p.getElement();
+			if (e.getKey().equals(key)) {
+				V oldV = e.getValue();
+				table.remove(p);
+				return oldV;
+			}
+		}
 		return null;
 	}
 
