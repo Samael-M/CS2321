@@ -57,7 +57,6 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
 
 	@Override
 	public Iterable<K> keySet() {
-		
 		return new KeyIterable();
 	}
 	

@@ -15,6 +15,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	/* all the data will be stored in tree*/
 	LinkedBinaryTree<Entry<K,V>> tree; 
 	int size;  //the number of entries (mappings)
+	DefaultComparator C;
 	
 	/* 
 	 * default constructor
@@ -22,11 +23,12 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	public BinarySearchTree() {
 		tree = new LinkedBinaryTree<>();
 		tree.addRoot(null);
+		C = new DefaultComparator();
 	}
 
 	public boolean checkKey(K key) throws IllegalArgumentException {
 		try {
-			return (key.compareTo(key) == 0);
+			return (C.compare(key, key) == 0);
 		} catch (ClassCastException e) {
 			throw new IllegalArgumentException("Incompatiable key");
 		}
@@ -61,7 +63,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 
 	public Position<Entry<K, V>> treeSearch(Position<Entry<K, V>> p , K key) {
 		if (tree.isExternal(p))  return p;
-		int comp = key.compareTo(p.getElement().getKey());
+		int comp = C.compare(key,p.getElement().getKey());
 		if (comp == 0) return p ;
 		else if (comp < 0) return treeSearch(tree.left(p), key);
 		else return treeSearch(tree.right(p), key);
@@ -171,16 +173,17 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	public Iterable<Entry<K, V>> subMap(K fromKey, K toKey)
 			throws IllegalArgumentException {
 		ArrayList<Entry<K, V>> buffer = new ArrayList<>(size());
-		if (fromKey.compareTo(toKey) < 0) subMapRecurse(fromKey, toKey, root(), buffer);
+		if (C.compare(fromKey, toKey) < 0) subMapRecurse(fromKey, toKey, root(), buffer);
 		return buffer;
 	}
 
 	public void subMapRecurse(K fromKey, K toKey, Position<Entry<K, V>> p, ArrayList<Entry<K, V>> buffer) {
 		if (tree.isInternal(p)) {
-			if(p.getElement().getKey().compareTo(fromKey) < 0) subMapRecurse(fromKey, toKey, tree.right(p), buffer);
+
+			if(C.compare(p.getElement(), fromKey) < 0) subMapRecurse(fromKey, toKey, tree.right(p), buffer);
 			else {
 				subMapRecurse(fromKey, toKey, tree.left(p), buffer);
-				if (p.getElement().getKey().compareTo(toKey) < 0) {
+				if (C.compare(p.getElement().getKey(), toKey) < 0) {
 					buffer.addLast(p.getElement());
 					subMapRecurse(fromKey, toKey, tree.right(p), buffer);
 				}

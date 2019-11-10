@@ -1,5 +1,6 @@
 package cs2321;
 
+import javafx.util.Builder;
 import net.datastructures.*;
 
 public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
@@ -11,6 +12,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	int 	size;  // number of mappings(entries) 
 	int 	capacity; // The size of the hash table. 
 	int     DefaultCapacity = 17; //The default hash table size
+	DefaultComparator C;
 	
 	/* Maintain the load factor <= 0.75.
 	 * If the load factor is greater than 0.75, 
@@ -23,18 +25,15 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	 * @param hashtablesize size: the number of buckets to initialize
 	 */
 	public HashMap(int hashtablesize) {
-		// TODO Add necessary initialization
-
+		size = hashtablesize;
+		C = new DefaultComparator();
 	}
 	
 	/**
 	 * Constructor that takes no argument
 	 * Initialize the hash table with default hash table size: 17
 	 */
-	public HashMap() {
-		// TODO Add necessary initialization
-		
-	}
+	public HashMap() { }
 	
 	/* This method should be called by map an integer to the index range of the hash table 
 	 */
@@ -63,22 +62,93 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 		return table.length == 0;
 	}
 
+//	public boolean isAvailable(int j) {
+//		return (table[j] == null || table[j].equals(DEFUNCT));
+//	}
+//
+//	public int findSlot(int h, K k) {
+//		int available = -1;
+//		int j = h;
+//		do {
+//			if(isAvailable(j)) {
+//				if(available == -1) available = j;
+//				if(table[j] == null) break;
+//			} else if(table[j].equals(k)) return j;
+//			j = (j + 1) % capacity;
+//		} while (j!= h);
+//		return -(available + 1);
+//	}
+
+//	public V search(K key) {
+//		int i = hashValue(key);
+//		int p = 0;
+//		while (p == ) {
+//			Map c = table[i];
+//			if(c == null) return null;
+//			else if(c.)
+//		}
+//	}
+
+	public int binarySearch(K key, int mode) {
+		int l = 0;
+		int h = table.length - 1;
+		while(l <= h) {
+			int mid = (l + h) / 2;
+			UnorderedMap<K, V> cur = table[mid];
+			if(C.compare(cur, key) == 0) return mid;
+			if(C.compare(cur, key) > 0) h = mid - 1;
+			else l = mid +  1;
+		}
+		if(mode == 0) return -1;
+		else return l;
+	}
+
 	@Override
 	public V get(K key) {
-		// TODO Auto-generated method stub
-		return null;
+//		for(UnorderedMap<K, V> t : table) {
+//			for(Entry<K, V> r : t.entrySet()) {
+//				if(r.getKey().equals(key)) return r.getValue();
+//			}
+//		}
+//		return null;
+
+		int index = binarySearch(key, 0);
+		if(index == -1) return null;
+		return table[index].get(key);
 	}
 
 	@Override
 	public V put(K key, V value) {
-		// TODO Auto-generated method stub
-		return null;
+//		for(UnorderedMap<K, V> t : table) {
+//			for(Entry<K, V> e : t.entrySet()) {
+//				if(e.getKey().equals(key)) {
+//					V oldV = e.getValue();
+//					e.setValue(value);
+//					return oldV;
+//				}
+//			}
+//		}
+//		return null;
+		int index = binarySearch(key, 0);
+		if(index <= table.length - 1 && C.compare(table[index].getEntry(key).getKey(), key) == 0) { //problem getting key from table[index]
+			V oldV = table[index].get(key);
+			K tempK = table[index].getEntry(key).getKey();
+			table[index].remove(key);
+			table[index].put(tempK, value);
+			return oldV;
+		} else {
+			table[index].put(key, value);
+			return null;
+		}
 	}
 
 	@Override
 	public V remove(K key) {
-		// TODO Auto-generated method stub
-		return null;
+		int index = binarySearch(key, 0);
+
+		if(index == -1) return null;
+		UnorderedMap<K, V> e = table[index];
+		return e.get(key);
 	}
 
 	@Override

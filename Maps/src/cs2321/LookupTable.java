@@ -8,16 +8,16 @@ public class LookupTable<K extends Comparable<K>, V> extends AbstractMap<K,V> im
 	 * 
 	 */
 	private ArrayList<mapEntry<K,V>> table;
+	DefaultComparator C = new DefaultComparator();
 
-	
 	public LookupTable(){
-		// TODO Add necessary initialization
+
 	}
 
 	public int findIndex(K key, int low, int high) {
 		if(high < low) return high + 1;
 		int mid = (low + high) / 2;
-		int comp = key.compareTo(table.get(mid).getKey());
+		int comp = C.compare(key, table.get(mid).getKey());
 		if (comp == 0) return mid;
 		else if (comp < 0) return findIndex(key, low, mid -1);
 		else return findIndex(key, mid+ 1, high);
