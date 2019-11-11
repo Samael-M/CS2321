@@ -11,7 +11,7 @@ public class LookupTable<K extends Comparable<K>, V> extends AbstractMap<K,V> im
 	DefaultComparator C = new DefaultComparator();
 
 	public LookupTable(){
-
+		table = new ArrayList<mapEntry<K, V>>();
 	}
 
 	public int findIndex(K key, int low, int high) {

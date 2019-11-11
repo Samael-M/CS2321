@@ -66,6 +66,15 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 		if(j < size() && C.compare(key, table.get(j).getKey()) == 0) return null; //table.get(j).setValue(value);
 		table.add(j, new mapEntry<K, V>(key, value));
 		return null;
+
+//		int j = findIndex(key);
+//		if(j == -1) {
+//			table.addLast(new mapEntry<>(key, value));
+//			return null;
+//		} else {
+//			table.get(j).setValue(value);
+//			return value;
+//		}
 	}
 
 	@Override

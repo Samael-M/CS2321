@@ -8,6 +8,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -17,6 +24,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -33,59 +41,78 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.emptyListLF">
-    <configuration name="emptyListLF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in Maps">
+    <configuration name="All in Maps" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Maps" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="emptyListLF" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="emptyTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="emptyListHM and 6 more" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Maps" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="emptyTable" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="emptyListHM" />
+        <pattern testClass="largeItemListRemoveHM" />
+        <pattern testClass="largeItemListRetrieveHM" />
+        <pattern testClass="multipleItemRepeatedListHM" />
+        <pattern testClass="multipleItemUniqueListHM" />
+        <pattern testClass="oneItemListHM" />
+        <pattern testClass="twoItemListHM" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="smallIntTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="sixEntryBST.Test16" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Maps" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="smallIntTable" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
+      <option name="METHOD_NAME" value="Test16" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="smallTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="sixEntryBST.Test22" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Maps" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="smallTable" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
+      <option name="METHOD_NAME" value="Test22" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="twoItemListHM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="sixEntryBST.Test23" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Maps" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="twoItemListHM" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
+      <option name="METHOD_NAME" value="Test23" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sixEntryBST.Test30" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
+      <option name="METHOD_NAME" value="Test30" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.emptyListLF" />
-        <item itemvalue="JUnit.emptyTable" />
-        <item itemvalue="JUnit.smallTable" />
-        <item itemvalue="JUnit.smallIntTable" />
-        <item itemvalue="JUnit.twoItemListHM" />
+        <item itemvalue="JUnit.All in Maps" />
+        <item itemvalue="JUnit.sixEntryBST.Test30" />
+        <item itemvalue="JUnit.sixEntryBST.Test16" />
+        <item itemvalue="JUnit.sixEntryBST.Test23" />
+        <item itemvalue="JUnit.sixEntryBST.Test22" />
       </list>
     </recent_temporary>
   </component>
@@ -102,7 +129,7 @@
       <workItem from="1572906902788" duration="266000" />
       <workItem from="1573273079260" duration="4602000" />
       <workItem from="1573344481657" duration="10067000" />
-      <workItem from="1573406978323" duration="8476000" />
+      <workItem from="1573406978323" duration="21299000" />
     </task>
     <servers />
   </component>
@@ -121,16 +148,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cs2321/HashMap.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

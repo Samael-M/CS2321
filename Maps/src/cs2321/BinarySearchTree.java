@@ -15,7 +15,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	/* all the data will be stored in tree*/
 	LinkedBinaryTree<Entry<K,V>> tree; 
 	int size;  //the number of entries (mappings)
-	DefaultComparator C;
+	DefaultComparator<K> C;
 	
 	/* 
 	 * default constructor
@@ -63,7 +63,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 
 	public Position<Entry<K, V>> treeSearch(Position<Entry<K, V>> p , K key) {
 		if (tree.isExternal(p))  return p;
-		int comp = C.compare(key,p.getElement().getKey());
+		int comp = C.compare(key, p.getElement().getKey());
 		if (comp == 0) return p ;
 		else if (comp < 0) return treeSearch(tree.left(p), key);
 		else return treeSearch(tree.right(p), key);
@@ -112,6 +112,13 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 		return tree.parent(walk);
 	}
 
+	public Position<Entry<K, V>> treeMin(Position<Entry<K, V>> p) {
+		Position<Entry<K, V>> walk = p;
+		while(tree.isInternal(walk))
+			walk = tree.left(walk);
+		return tree.parent(walk);
+	}
+
 
 	@Override
 	public Iterable<Entry<K, V>> entrySet() {
@@ -124,7 +131,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	@Override
 	public Entry<K, V> firstEntry() {
 		if(isEmpty()) return null;
-		return root().getElement();
+		return treeMin(root()).getElement();
 	}
 
 	@Override
@@ -134,12 +141,20 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	}
 
 	@Override
+	//smallest key >= to given key
 	public Entry<K, V> ceilingEntry(K key) {
-		// TODO Auto-generated method stub
+		checkKey(key);
+		Position<Entry<K, V>> p = treeSearch(root(), key);
+		if(tree.isInternal(p)) return p.getElement();
+		while (!tree.isRoot(p)) {
+			if (p == tree.left(tree.parent(p))) return tree.parent(p).getElement();
+			else p = tree.parent(p);
+		}
 		return null;
 	}
 
 	@Override
+	//greatest key <= to given key
 	public Entry<K, V> floorEntry(K key)  {
 		checkKey(key);
 		Position<Entry<K, V>> p = treeSearch(root(), key);
@@ -164,8 +179,15 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	}
 
 	@Override
+	//smallest key strictly greater than given key
 	public Entry<K, V> higherEntry(K key){
-		// TODO Auto-generated method stub
+		checkKey(key);
+		Position<Entry<K, V>> p = treeSearch(root(), key);
+		if(tree.isInternal(p) && tree.isInternal(tree.right(p))) return treeMin(tree.right(p)).getElement();
+		while (!tree.isRoot(p)) {
+			if (p == tree.left(tree.parent(p))) return tree.parent(p).getElement();
+			else p = tree.parent(p);
+		}
 		return null;
 	}
 
@@ -179,8 +201,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 
 	public void subMapRecurse(K fromKey, K toKey, Position<Entry<K, V>> p, ArrayList<Entry<K, V>> buffer) {
 		if (tree.isInternal(p)) {
-
-			if(C.compare(p.getElement(), fromKey) < 0) subMapRecurse(fromKey, toKey, tree.right(p), buffer);
+			if(C.compare(p.getElement().getKey(), fromKey) < 0) subMapRecurse(fromKey, toKey, tree.right(p), buffer);
 			else {
 				subMapRecurse(fromKey, toKey, tree.left(p), buffer);
 				if (C.compare(p.getElement().getKey(), toKey) < 0) {

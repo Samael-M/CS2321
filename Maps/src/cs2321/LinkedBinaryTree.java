@@ -1,8 +1,9 @@
 package cs2321;
 import java.util.Iterator;
-
 import net.datastructures.*;
-	
+
+import javax.management.openmbean.CompositeDataSupport;
+
 
 public class LinkedBinaryTree<E> implements BinaryTree<E>{
 
@@ -65,27 +66,31 @@ public class LinkedBinaryTree<E> implements BinaryTree<E>{
 
 	@Override
 	public Iterable<Position<E>> children(Position<E> p) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return null;
+		List<Position<E>> snapshot = new ArrayList<>(2);
+		if(left(p) != null) snapshot.add(snapshot.size() - 1, left(p));
+		if(right(p) != null) snapshot.add(snapshot.size() - 1, right(p));
+		return snapshot;
 	}
 
 	@Override
 	/* count only direct child of the node, not further descendant. */
 	public int numChildren(Position<E> p) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return 0;
+		int count = 0;
+		if(left(p) != null) count ++;
+		if (right(p) != null) count ++;
+		return count;
 	}
 
 	@Override
 	public boolean isInternal(Position<E> p) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return false;
+		Node<E> node = validate(p);
+		return !(node.getLeft() == null && node.getRight() == null);
 	}
 
 	@Override
 	public boolean isExternal(Position<E> p) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return false;
+		Node<E> node = validate(p);
+		return node.getLeft() == null && node.getRight() == null;
 	}
 
 	@Override
@@ -94,7 +99,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E>{
 		return p == root; }
 
 	@Override
-	public int size() { return size(); }
+	public int size() { return size; }
 
 	@Override
 	public boolean isEmpty() { return size == 0; }
@@ -125,8 +130,21 @@ public class LinkedBinaryTree<E> implements BinaryTree<E>{
 
 	@Override
 	public Position<E> sibling(Position<E> p) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return null;
+		Position<E> parent = parent(p);
+		if(parent == null) return null;
+		if(p == left(parent)) return right(parent);
+		return left(parent);
+	}
+
+	public Iterable<Position<E>> inorder() {
+		List<Position<E>> snapshot = new ArrayList<>();
+		if(!isEmpty()) inorderSubtree(root(), snapshot);
+		return snapshot;
+	}
+	public void inorderSubtree(Position<E> p , List<Position<E>> snapshot) {
+		if(left(p) !=null) inorderSubtree(left(p), snapshot);
+		snapshot.add(snapshot.size() - 1, p);
+		if(right(p) !=null) inorderSubtree(right(p), snapshot);
 	}
 	
 	/* creates a root for an empty tree, storing e as element, and returns the 

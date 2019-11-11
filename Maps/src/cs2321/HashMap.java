@@ -25,15 +25,21 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	 * @param hashtablesize size: the number of buckets to initialize
 	 */
 	public HashMap(int hashtablesize) {
-		size = hashtablesize;
+		capacity = hashtablesize;
 		C = new DefaultComparator();
+		size = 0;
+		table = new UnorderedMap[capacity];
 	}
 	
 	/**
 	 * Constructor that takes no argument
 	 * Initialize the hash table with default hash table size: 17
 	 */
-	public HashMap() { }
+	public HashMap() {
+		C = new DefaultComparator();
+		size = 0;
+		table = new UnorderedMap[DefaultCapacity];
+	}
 	
 	/* This method should be called by map an integer to the index range of the hash table 
 	 */
@@ -47,114 +53,84 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	 * It should be 17 initially, after the load factor is more than 0.75, it should be doubled.
 	 */
 	public int tableSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		if(size > capacity * loadfactor) {
+			resize(2 * capacity - 1);
+			return size;
+		} else return size;
+	}
+
+	public void resize(int newCap) {
+		ArrayList<Entry<K, V>> buffer = new ArrayList<>(size);
+		for (Entry<K, V> e : entrySet()) buffer.addLast(e);
+		capacity = newCap;
+		table = (UnorderedMap<K, V>[]) new UnorderedMap[capacity];
+		size = 0;
+		for(Entry<K, V> e : buffer) {
+			put(e.getKey(), e.getValue());
+		}
 	}
 	
 	
 	@Override
 	public int size() {
-		return table.length;
+		return size;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return table.length == 0;
-	}
-
-//	public boolean isAvailable(int j) {
-//		return (table[j] == null || table[j].equals(DEFUNCT));
-//	}
-//
-//	public int findSlot(int h, K k) {
-//		int available = -1;
-//		int j = h;
-//		do {
-//			if(isAvailable(j)) {
-//				if(available == -1) available = j;
-//				if(table[j] == null) break;
-//			} else if(table[j].equals(k)) return j;
-//			j = (j + 1) % capacity;
-//		} while (j!= h);
-//		return -(available + 1);
-//	}
-
-//	public V search(K key) {
-//		int i = hashValue(key);
-//		int p = 0;
-//		while (p == ) {
-//			Map c = table[i];
-//			if(c == null) return null;
-//			else if(c.)
-//		}
-//	}
-
-	public int binarySearch(K key, int mode) {
-		int l = 0;
-		int h = table.length - 1;
-		while(l <= h) {
-			int mid = (l + h) / 2;
-			UnorderedMap<K, V> cur = table[mid];
-			if(C.compare(cur, key) == 0) return mid;
-			if(C.compare(cur, key) > 0) h = mid - 1;
-			else l = mid +  1;
-		}
-		if(mode == 0) return -1;
-		else return l;
+		return size == 0;
 	}
 
 	@Override
 	public V get(K key) {
-//		for(UnorderedMap<K, V> t : table) {
-//			for(Entry<K, V> r : t.entrySet()) {
-//				if(r.getKey().equals(key)) return r.getValue();
-//			}
-//		}
-//		return null;
+		return bucketGet(hashValue(key), key);
+	}
 
-		int index = binarySearch(key, 0);
-		if(index == -1) return null;
-		return table[index].get(key);
+	public V bucketGet(int h, K key) {
+		UnorderedMap<K, V> bucket = table[h];
+		if(bucket == null) return null;
+		return bucket.get(key);
 	}
 
 	@Override
 	public V put(K key, V value) {
-//		for(UnorderedMap<K, V> t : table) {
-//			for(Entry<K, V> e : t.entrySet()) {
-//				if(e.getKey().equals(key)) {
-//					V oldV = e.getValue();
-//					e.setValue(value);
-//					return oldV;
-//				}
-//			}
-//		}
-//		return null;
-		int index = binarySearch(key, 0);
-		if(index <= table.length - 1 && C.compare(table[index].getEntry(key).getKey(), key) == 0) { //problem getting key from table[index]
-			V oldV = table[index].get(key);
-			K tempK = table[index].getEntry(key).getKey();
-			table[index].remove(key);
-			table[index].put(tempK, value);
-			return oldV;
-		} else {
-			table[index].put(key, value);
-			return null;
-		}
+		return bucketPut(hashValue(key), key, value);
+	}
+
+	public V bucketPut(int h, K key, V value) {
+		UnorderedMap<K, V> bucket = table[h];
+		if(bucket == null) bucket = table[h] = new UnorderedMap<>();
+		int oldSize = bucket.size();
+		V answer = bucket.put(key, value);
+		size += (bucket.size() - oldSize);
+		tableSize();
+		return answer;
 	}
 
 	@Override
 	public V remove(K key) {
-		int index = binarySearch(key, 0);
+		return bucketRemove(hashValue(key), key);
+	}
 
-		if(index == -1) return null;
-		UnorderedMap<K, V> e = table[index];
-		return e.get(key);
+	public V bucketRemove(int h, K key) {
+		UnorderedMap<K, V> bucket = table[h];
+		if(bucket == null) return null;
+		int oldSize = bucket.size();
+		V answer = bucket.remove(key);
+		size -= (oldSize - bucket.size());
+		return answer;
 	}
 
 	@Override
 	public Iterable<Entry<K, V>> entrySet() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Entry<K, V>> buffer = new ArrayList<>();
+		for (int h = 0; h < capacity; h++) {
+			if(table[h] != null) {
+				for(Entry<K, V> entry : table[h].entrySet()) {
+					buffer.addLast(entry);
+				}
+			}
+		} return buffer;
 	}
 	
 
