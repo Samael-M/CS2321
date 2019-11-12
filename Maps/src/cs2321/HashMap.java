@@ -1,6 +1,4 @@
 package cs2321;
-
-import javafx.util.Builder;
 import net.datastructures.*;
 
 public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
@@ -28,6 +26,8 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 		capacity = hashtablesize;
 		C = new DefaultComparator();
 		size = 0;
+//		if(hashtablesize == 0) { table = new UnorderedMap[DefaultCapacity]; }
+//		else table = new UnorderedMap[capacity];
 		table = new UnorderedMap[capacity];
 	}
 	
@@ -103,7 +103,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 		int oldSize = bucket.size();
 		V answer = bucket.put(key, value);
 		size += (bucket.size() - oldSize);
-		tableSize();
+		//tableSize();
 		return answer;
 	}
 

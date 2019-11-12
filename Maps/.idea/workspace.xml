@@ -66,31 +66,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="emptyListLF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="emptyListLF" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="multipleItemRepeatedListHM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maps" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="multipleItemRepeatedListHM" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="sixEntryBST.Test16" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Maps" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
       <option name="METHOD_NAME" value="Test16" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="sixEntryBST.Test22" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Maps" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
-      <option name="METHOD_NAME" value="Test22" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="sixEntryBST.Test23" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Maps" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="sixEntryBST" />
-      <option name="METHOD_NAME" value="Test23" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,9 +108,9 @@
       <list>
         <item itemvalue="JUnit.All in Maps" />
         <item itemvalue="JUnit.sixEntryBST.Test30" />
+        <item itemvalue="JUnit.multipleItemRepeatedListHM" />
+        <item itemvalue="JUnit.emptyListLF" />
         <item itemvalue="JUnit.sixEntryBST.Test16" />
-        <item itemvalue="JUnit.sixEntryBST.Test23" />
-        <item itemvalue="JUnit.sixEntryBST.Test22" />
       </list>
     </recent_temporary>
   </component>
@@ -130,6 +128,10 @@
       <workItem from="1573273079260" duration="4602000" />
       <workItem from="1573344481657" duration="10067000" />
       <workItem from="1573406978323" duration="21299000" />
+      <workItem from="1573433769742" duration="18000" />
+      <workItem from="1573445466510" duration="72000" />
+      <workItem from="1573483773175" duration="600000" />
+      <workItem from="1573511669551" duration="5329000" />
     </task>
     <servers />
   </component>

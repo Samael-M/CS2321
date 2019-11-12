@@ -40,48 +40,51 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 		return table.isEmpty();
 	}
 
-	public int findIndex(K key, int low, int high) {
-		if(high < low) return high + 1;
-		int mid = (low + high) / 2;
-		int comp = C.compare(key, table.get(mid).getKey());
-		if (comp == 0) return mid;
-		else if (comp < 0) return findIndex(key, low, mid -1);
-		else return findIndex(key, mid+ 1, high);
+	public int findIndex(K key) {
+		int n = table.size();
+		for (int j = 0; j < n; j++) {
+			if(table.get(j).getKey().equals(key)) return j;
+		} return -1;
 	}
 
-	public int findIndex(K key) {
-		return findIndex(key, 0, size() - 1);
-	}
+//	public int findIndex(K key) {
+//		return findIndex(key, 0, size() - 1);
+//	}
 
 	@Override
 	public V get(K key) {
 		int j = findIndex(key);
-		if(j == size() || C.compare(key, table.get(j).getKey()) != 0) return null;
+		if(j == -1) return null;
 		return table.get(j).getValue();
 	}
 
 	@Override
 	public V put(K key, V value) {
-		int j = findIndex(key);
-		if(j < size() && C.compare(key, table.get(j).getKey()) == 0) return null; //table.get(j).setValue(value);
-		table.add(j, new mapEntry<K, V>(key, value));
-		return null;
-
 //		int j = findIndex(key);
-//		if(j == -1) {
-//			table.addLast(new mapEntry<>(key, value));
-//			return null;
-//		} else {
-//			table.get(j).setValue(value);
-//			return value;
-//		}
+//		if(j < size() && C.compare(key, table.get(j).getKey()) == 0) return null; //table.get(j).setValue(value);
+//		table.add(j, new mapEntry<K, V>(key, value));
+//		return null;
+
+		int j = findIndex(key);
+		if(j == -1) {
+			table.addLast(new mapEntry<>(key, value));
+			return null;
+		} else {
+			//return table.get(j).setValue(value);
+			return table.set(j, new mapEntry<K, V>(key, value)).getValue();
+		}
 	}
 
 	@Override
 	public V remove(K key) {
 		int j = findIndex(key);
-		if(j == size() || C.compare(key, table.get(j).getKey()) != 0) return null;
-		return table.remove(j).getValue();
+		int n = size();
+		if(j == -1) return null;
+		V answer = table.get(j).getValue();
+		if(j != n - 1) table.set(j, table.get(n - 1));
+		table.remove(n - 1);
+		return answer;
+
 	}
 
 	public class EntryIterator implements Iterator<Entry<K, V>> {

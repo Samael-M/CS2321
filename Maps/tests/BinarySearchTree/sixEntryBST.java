@@ -248,7 +248,6 @@ public class sixEntryBST {
 			  actual.add(s);
 		  }
 		Boolean ret = expected.containsAll(actual) && actual.containsAll(expected);
-		
 		org.junit.Assert.assertEquals("values(): A,B,C,D,E,F", (Object)(true), (Object)(ret));
 	}
 

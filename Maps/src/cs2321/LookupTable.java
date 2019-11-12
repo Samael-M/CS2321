@@ -40,14 +40,18 @@ public class LookupTable<K extends Comparable<K>, V> extends AbstractMap<K,V> im
 	@Override
 	public V get(K key) {
 		int j = findIndex(key);
-		if(j == size() || key.compareTo(table.get(j).getKey()) != 0) return null;
+		if(j == size() || C.compare(key, table.get(j).getKey()) != 0) return null;
 		return table.get(j).getValue();
 	}
 
 	@Override
 	public V put(K key, V value) {
 		int j = findIndex(key);
-		if(j < size() && key.compareTo(table.get(j).getKey()) == 0) return null; //table.get(j).setValue(value);
+		if(j < size() && C.compare(key, table.get(j).getKey()) == 0){
+			V oldV = table.get(j).getValue();
+			table.get(j).setValue(value);
+			return oldV;
+		}
 		table.add(j, new mapEntry<K, V>(key, value));
 		return null;
 	}
@@ -55,13 +59,13 @@ public class LookupTable<K extends Comparable<K>, V> extends AbstractMap<K,V> im
 	@Override
 	public V remove(K key) {
 		int j = findIndex(key);
-		if(j == size() || key.compareTo(table.get(j).getKey()) != 0) return null;
+		if(j == size() || C.compare(key, table.get(j).getKey()) != 0) return null;
 		return table.remove(j).getValue();
 	}
 
 	public Entry<K, V> safeEntry(int j) {
 		if(j < 0 || j >= table.size()) return null;
-		return table .get(j);
+		return table.get(j);
 	}
 	@Override
 	public Entry<K, V> firstEntry() { return safeEntry(0); }
@@ -73,23 +77,24 @@ public class LookupTable<K extends Comparable<K>, V> extends AbstractMap<K,V> im
 	@Override
 	public Entry<K, V> floorEntry(K key)  {
 		int j = findIndex(key);
-		if(j == size() || key.equals(table.get(j))) j--;
+		if(j == size() || !key.equals(table.get(j).getKey()))
+			j--;
 		return safeEntry(j);
 	}
-
 	@Override
 	public Entry<K, V> lowerEntry(K key) { return safeEntry(findIndex(key) - 1); }
 	@Override
 	public Entry<K, V> higherEntry(K key) {
 		int j = findIndex(key);
-		if (j < size() && key.equals(table.get(j).getKey())) j++;
+		if (j < size() && key.equals(table.get(j).getKey()))
+			j++;
 		return safeEntry(j);
 	}
 
 	public Iterable<Entry<K, V>> snapshot(int startIndex, K stop) {
 		ArrayList<Entry<K, V>> buffer = new ArrayList<>();
 		int j = startIndex;
-		while(j < table.size() && (stop == null || stop.compareTo(table.get(j).getKey()) > 0)) {
+		while(j < table.size() && (stop == null || C.compare(stop, table.get(j).getKey()) > 0)) {
 			buffer.addLast(table.get(j++));
 		}
 		return buffer;
