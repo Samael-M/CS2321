@@ -35,6 +35,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	}
 	Position<Entry<K,V>> root() { return tree.root(); }
 
+	/** Helper function to put method */
 	public void expandExternal(Position<Entry<K, V>> p, Entry<K, V> entry) {
 		tree.set(p, entry);
 		tree.addLeft(p, null);
@@ -45,6 +46,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	public int size(){
 		return (tree.size() - 1) / 2;
 	}
+
 	@Override
 	public V get(K key) {
 		checkKey(key);
@@ -53,6 +55,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 		return p.getElement().getValue();
 	}
 
+	/** returns Position p of Entry with given K key */
 	public Position<Entry<K, V>> treeSearch(Position<Entry<K, V>> p , K key) {
 		if (tree.isExternal(p))  return p;
 		int comp = C.compare(key, p.getElement().getKey());
@@ -60,7 +63,6 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 		else if (comp < 0) return treeSearch(tree.left(p), key);
 		else return treeSearch(tree.right(p), key);
 	}
-
 	@Override
 	public V put(K key, V value) {
 		checkKey(key);
@@ -75,6 +77,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 			return old;
 		}
 	}
+
 
 	@Override
 	public V remove(K key) {
@@ -96,7 +99,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 			return old;
 		}
 	}
-
+	/** returns postiion in subtree p with maximun key */
 	public Position<Entry<K, V>> treeMax(Position<Entry<K, V>> p) {
 		Position<Entry<K, V>> walk = p;
 		while(tree.isInternal(walk))
@@ -104,6 +107,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 		return tree.parent(walk);
 	}
 
+	/** Same as Treemax, but with mins */
 	public Position<Entry<K, V>> treeMin(Position<Entry<K, V>> p) {
 		Position<Entry<K, V>> walk = p;
 		while(tree.isInternal(walk))
@@ -111,12 +115,9 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 		return tree.parent(walk);
 	}
 
-
 	@Override
 	public Iterable<Entry<K, V>> entrySet() {
 		ArrayList<Entry<K, V>> buffer = new ArrayList<>(size());
-//		for (Position<Entry<K, V>> p : tree.inorder)
-//			if (tree.isInternal(p)) buffer.addLast(p.getElement());
 		return buffer;
 	}
 
@@ -133,7 +134,6 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	}
 
 	@Override
-	//smallest key >= to given key
 	public Entry<K, V> ceilingEntry(K key) {
 		checkKey(key);
 		Position<Entry<K, V>> p = treeSearch(root(), key);
@@ -146,7 +146,6 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	}
 
 	@Override
-	//greatest key <= to given key
 	public Entry<K, V> floorEntry(K key)  {
 		checkKey(key);
 		Position<Entry<K, V>> p = treeSearch(root(), key);
@@ -171,7 +170,6 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 	}
 
 	@Override
-	//smallest key strictly greater than given key
 	public Entry<K, V> higherEntry(K key){
 		checkKey(key);
 		Position<Entry<K, V>> p = treeSearch(root(), key);
@@ -182,6 +180,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 		}
 		return null;
 	}
+
 
 	@Override
 	public Iterable<Entry<K, V>> subMap(K fromKey, K toKey)
@@ -203,7 +202,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractMap<K,V
 			}
 		}
 	}
-
+	//I wonder if its empty
 	@Override
 	public boolean isEmpty() {
 		return tree.isEmpty();

@@ -91,6 +91,7 @@ public class LookupTable<K extends Comparable<K>, V> extends AbstractMap<K,V> im
 		return safeEntry(j);
 	}
 
+	/** Helper for entry set, gives iterable of entrys in table from start index to stop */
 	public Iterable<Entry<K, V>> snapshot(int startIndex, K stop) {
 		ArrayList<Entry<K, V>> buffer = new ArrayList<>();
 		int j = startIndex;

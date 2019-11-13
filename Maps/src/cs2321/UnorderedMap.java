@@ -26,15 +26,6 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 		return table.size();
 	}
 
-	public Entry<K, V> getEntry(int index) {
-		return table.get(index);
-	}
-
-	public Entry<K, V> getEntry(K key) {
-		int j = findIndex(key);
-		if(j == size() || C.compare(key, table.get(j).getKey()) != 0) return null;
-		return table.get(j);
-	}
 	@Override
 	public boolean isEmpty() {
 		return table.isEmpty();
@@ -46,11 +37,6 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 			if(table.get(j).getKey().equals(key)) return j;
 		} return -1;
 	}
-
-//	public int findIndex(K key) {
-//		return findIndex(key, 0, size() - 1);
-//	}
-
 	@Override
 	public V get(K key) {
 		int j = findIndex(key);
@@ -60,11 +46,6 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 
 	@Override
 	public V put(K key, V value) {
-//		int j = findIndex(key);
-//		if(j < size() && C.compare(key, table.get(j).getKey()) == 0) return null; //table.get(j).setValue(value);
-//		table.add(j, new mapEntry<K, V>(key, value));
-//		return null;
-
 		int j = findIndex(key);
 		if(j == -1) {
 			table.addLast(new mapEntry<>(key, value));
@@ -87,6 +68,7 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 
 	}
 
+	/** Iterator from the book */
 	public class EntryIterator implements Iterator<Entry<K, V>> {
 		private int j = 0;
 		public boolean hasNext() { return j < table.size(); }
@@ -97,6 +79,7 @@ public class UnorderedMap<K,V> extends AbstractMap<K,V> {
 		public void remove() { throw new UnsupportedOperationException(); }
 	}
 
+	/** Iterator from the book */
 	public class EntryIterable implements Iterable<Entry<K, V>> {
 		@Override
 		public Iterator<Entry<K, V>> iterator() { return new EntryIterator(); }

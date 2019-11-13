@@ -134,16 +134,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E>{
 		return left(parent);
 	}
 
-	public Iterable<Position<E>> inorder() {
-		List<Position<E>> snapshot = new ArrayList<>();
-		if(!isEmpty()) inorderSubtree(root(), snapshot);
-		return snapshot;
-	}
-	public void inorderSubtree(Position<E> p , List<Position<E>> snapshot) {
-		if(left(p) !=null) inorderSubtree(left(p), snapshot);
-		snapshot.add(snapshot.size() - 1, p);
-		if(right(p) !=null) inorderSubtree(right(p), snapshot);
-	}
 	
 	/* creates a root for an empty tree, storing e as element, and returns the 
 	 * position of that root. An error occurs if tree is not empty. 

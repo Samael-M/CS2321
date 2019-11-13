@@ -26,8 +26,6 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 		capacity = hashtablesize;
 		C = new DefaultComparator();
 		size = 0;
-//		if(hashtablesize == 0) { table = new UnorderedMap[DefaultCapacity]; }
-//		else table = new UnorderedMap[capacity];
 		table = new UnorderedMap[capacity];
 	}
 	
@@ -52,6 +50,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	 * Return the the size of the hash table. 
 	 * It should be 17 initially, after the load factor is more than 0.75, it should be doubled.
 	 */
+	/** Checks to see if table is 75% full or more, if so resizes it */
 	public int tableSize() {
 		if(size > capacity * loadfactor) {
 			resize(2 * capacity - 1);
@@ -59,6 +58,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 		} else return size;
 	}
 
+	/** resizes table, extending its size to newCap */
 	public void resize(int newCap) {
 		ArrayList<Entry<K, V>> buffer = new ArrayList<>(size);
 		for (Entry<K, V> e : entrySet()) buffer.addLast(e);
@@ -85,7 +85,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	public V get(K key) {
 		return bucketGet(hashValue(key), key);
 	}
-
+	/** Helper to get using chaining for collision */
 	public V bucketGet(int h, K key) {
 		UnorderedMap<K, V> bucket = table[h];
 		if(bucket == null) return null;
@@ -96,7 +96,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	public V put(K key, V value) {
 		return bucketPut(hashValue(key), key, value);
 	}
-
+	/** Helper to put using chaining for collision */
 	public V bucketPut(int h, K key, V value) {
 		UnorderedMap<K, V> bucket = table[h];
 		if(bucket == null) bucket = table[h] = new UnorderedMap<>();
@@ -112,6 +112,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 		return bucketRemove(hashValue(key), key);
 	}
 
+	/** Helper to remove using chaining for collision */
 	public V bucketRemove(int h, K key) {
 		UnorderedMap<K, V> bucket = table[h];
 		if(bucket == null) return null;
