@@ -23,7 +23,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	 * @param hashtablesize size: the number of buckets to initialize
 	 */
 	public HashMap(int hashtablesize) {
-		capacity = hashtablesize;
+		capacity = (hashtablesize == 0) ? DefaultCapacity : hashtablesize;
 		C = new DefaultComparator();
 		size = 0;
 		table = new UnorderedMap[capacity];

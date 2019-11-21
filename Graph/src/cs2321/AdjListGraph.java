@@ -9,7 +9,20 @@ import net.datastructures.*;
  * 
  * @author CS2321 Instructor
  */
+
 public class AdjListGraph<V, E> implements Graph<V, E> {
+
+	public class InnerVertex<V> implements Vertex<V> {
+		private V element;
+		private Position<Vertex<V>> pos;
+		private Map<Vertex<V>, Edge<E>> outgoing, incoming;
+
+		@Override
+		public V getElement() {
+			return null;
+		}
+	}
+
 
 	public AdjListGraph(boolean directed) {
 		//TODO directed graph constructor 
