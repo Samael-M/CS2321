@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a45bbd08-ec63-4b6e-9ffb-0b730274d070" name="Default Changelist" comment="" />
+    <list default="true" id="c5d3b539-3c6d-460f-9994-15744c24378e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1TwRgtf0NQyAfUYj4J3wSAI3ycb" />
+  <component name="ProjectId" id="1Ufzkd3e5Q6EvMuP0NPNyO4tABQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -40,34 +29,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="All in Graph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Graph" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.All in Graph" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a45bbd08-ec63-4b6e-9ffb-0b730274d070" name="Default Changelist" comment="" />
-      <created>1574369285856</created>
+      <changelist id="c5d3b539-3c6d-460f-9994-15744c24378e" name="Default Changelist" comment="" />
+      <created>1575762582011</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574369285856</updated>
-      <workItem from="1574369287072" duration="605000" />
-      <workItem from="1574382338382" duration="6691000" />
-      <workItem from="1575762512488" duration="44000" />
+      <updated>1575762582011</updated>
+      <workItem from="1575762585588" duration="319000" />
     </task>
     <servers />
   </component>
@@ -79,9 +51,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
