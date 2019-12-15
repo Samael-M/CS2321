@@ -44,6 +44,10 @@ public class Travel {
 			city.insertEdge(v, u, Integer.valueOf(routes[i][2]));
 		}
 
+//		for(int i = 0; i <= routes.length - 1; i++) {
+//			city.insertEdge(city.insertVertex(routes[i][0]), city.insertVertex(routes[i][1]), Integer.valueOf(routes[i][2]));
+//		}
+
 		
 	}
 	
@@ -67,23 +71,45 @@ public class Travel {
 	 *              See the method sortedOutgoingEdges below. 
 	 */
 	public Iterable<String> DFSRoute(String departure, String destination ) {
-
 		//TODO: find the path based Depth First Search and return it
-		return null;
+		Vertex<String> from = null;
+		Vertex<String> to = null;
+
+		for(Vertex<String> v : city.vertices()) {
+			if (v.getElement().equals(departure)) {
+				from = v;
+			}
+			if (v.getElement().equals(destination)) {
+				to = v;
+			}
+		}
+		DoublyLinkedList<Vertex<String>> known = new DoublyLinkedList<>();
+		HashMap<Vertex<String>, Edge<Integer>> forest = new HashMap<>();
+		DFS(city, from, known, forest);
+		DoublyLinkedList<Edge<Integer>> dfs = constructPath(city, from, to, forest);
+
+		ArrayList<String> path = new ArrayList<>();
+		for(Position<Edge<Integer>> p : dfs.positions()) {
+			path.addLast(p.getElement().getElement().toString());
+		}
+		Iterable<String> it = () -> path.iterator();
+		return it;
 	}
 
-	public void DFS(Graph<Vertex<String>, Integer> g,
-					Vertex<String> u, HashMap<Vertex<String>, Edge<Integer>> forest) {
+	public void DFS(Graph<String, Integer> g,
+					 Vertex<String> u, DoublyLinkedList<Vertex<String>> known, HashMap<Vertex<String>, Edge<Integer>> forest) {
 		for(Edge<Integer> e : sortedOutgoingEdges(u)) {
 			Vertex<String> v = g.opposite(u, e);
-			if(!known.contains(v)) {
-				forest.put(v, e);
-				DFS(g, v, known, forest);
+			for(Vertex<String> x : known) {
+				if(x.equals(v)) {
+					forest.put(v, e);
+					DFS(g, v, known, forest);
+				}
 			}
 		}
 	}
 
-	public DoublyLinkedList<Edge<Integer>> constructPath(Graph<Vertex<String>, Integer> g, Vertex<String> u,
+	public DoublyLinkedList<Edge<Integer>> constructPath(Graph<String, Integer> g, Vertex<String> u,
 														 Vertex<String> v, Map<Vertex<String>, Edge<Integer>> forest) {
 		DoublyLinkedList<Edge<Integer>> path = new DoublyLinkedList<>();
 		if(forest.get(v) != null) {
@@ -93,8 +119,8 @@ public class Travel {
 				path.addFirst(edge);
 				walk = g.opposite(walk, edge);
 			}
-
 		}
+		return path;
 	}
 
 
@@ -124,12 +150,30 @@ public class Travel {
 	public Iterable<String> BFSRoute(String departure, String destination ) {
 		
 		//TODO: find the path based Breadth First Search and return it
-		
-		return null;
+		Vertex<String> from = null;
+		Vertex<String> to = null;
+
+		for(Vertex<String> v : city.vertices()) {
+			if (v.getElement().equals(departure)) {
+				from = v;
+			}
+			if (v.getElement().equals(destination)) {
+				to = v;
+			}
+		}
+		DoublyLinkedList<Vertex<String>> known = new DoublyLinkedList<>();
+		HashMap<Vertex<String>, Edge<Integer>> forest = new HashMap<>();
+		HashMap<Vertex<String>, Edge<Integer>> bfs = BFS(city, from, known, forest);
+		ArrayList<String> route = new ArrayList<>();
+		for(Edge<Integer> e : bfs.values()) {
+			route.addLast(e.getElement().toString());
+		}
+		Iterable<String> it = () -> route.iterator();
+		return it;
 	}
 
-	public void BFS(Graph<Vertex<String>, Integer> g, Vertex<String> s, DoublyLinkedList<Vertex<String>> known,
-					Map<Vertex<String>, Edge<Integer>> forest) {
+	public HashMap<Vertex<String>, Edge<Integer>> BFS(Graph<String, Integer> g, Vertex<String> s, DoublyLinkedList<Vertex<String>> known,
+					HashMap<Vertex<String>, Edge<Integer>> forest) {
 		DoublyLinkedList<Vertex<String>> level = new DoublyLinkedList<>();
 		known.addLast(s);
 		level.addLast(s);
@@ -138,14 +182,17 @@ public class Travel {
 			for(Vertex<String> u : level)
 				for(Edge<Integer> e : sortedOutgoingEdges(u)) {
 					Vertex<String> v = g.opposite(u, e);
-					if(!known.contains(v)) {
-						known.addLast(v);
-						forest.put(v, e);
-						nextLevel.addLast(v);
+					for(Vertex<String> x : known) {
+						if(x.equals(v)) {
+							known.addLast(v);
+							forest.put(v, e);
+							nextLevel.addLast(v);
+						}
 					}
 				}
 			level = nextLevel;
 		}
+		return forest;
 	}
 	
 	/**
