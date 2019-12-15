@@ -61,7 +61,7 @@ public class AdjListGraph<V, E> implements Graph<V, E> {
 	}
 
 	public AdjListGraph() {
-		//TODO non directed graph constructor 
+		isDirected = false;
 	}
 
 

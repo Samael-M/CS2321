@@ -36,6 +36,7 @@ public class HashMap<K, V> extends AbstractMap<K,V> implements Map<K, V> {
 	public HashMap() {
 		C = new DefaultComparator();
 		size = 0;
+		capacity = DefaultCapacity;
 		table = new UnorderedMap[DefaultCapacity];
 	}
 	

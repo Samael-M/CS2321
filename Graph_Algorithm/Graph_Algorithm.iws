@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03e37463-c740-4480-8d7a-c5aff0df8740" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Graph_Algorithm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Graph_Algorithm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/CourseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/CourseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/DoublyLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/Islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/Islands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/IslandsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/IslandsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/Travel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/Travel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cs2321/TravelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/TravelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/AdaptablePriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/AdaptablePriorityQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/BinaryTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/CircularQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/CircularQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Deque.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Deque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Entry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/List.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/PositionalList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/PositionalList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/PriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/PriorityQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Queue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/SortedMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/SortedMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Stack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Tree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs2321/AdjListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/AdjListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs2321/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs2321/Travel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/Travel.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/bin/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/Travel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5224#5294#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/ArrayList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/DefaultComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/QuickSort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+              <folding>
+                <element signature="e#195#196#0" expanded="true" />
+                <element signature="e#234#235#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/TravelTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs2321/AdjListGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-432">
+              <caret line="31" column="48" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="48" />
+              <folding>
+                <element signature="e#2029#2030#0" expanded="true" />
+                <element signature="e#2053#2054#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>public AdjListGraph(</find>
+      <find>.setElement</find>
+      <find>insertV</find>
+      <find>insert</find>
+      <find>vertices</find>
+      <find>iterable</find>
+      <find>values</find>
+      <find>getOuting</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/cs2321/AdjListGraph.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/HashMap.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/QuickSort.java" />
+        <option value="$PROJECT_DIR$/src/cs2321/Travel.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="639" />
+    <option name="height" value="798" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Graph_Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Graph_Algorithm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Graph_Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Graph_Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Graph_Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Graph_Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cs2321" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Graph_Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Graph_Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="datastructures" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576368819090" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Travel">
+    <configuration name="Travel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs2321.Travel" />
+      <module name="Graph_Algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs2321.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TravelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Graph_Algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs2321.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cs2321" />
+      <option name="MAIN_CLASS_NAME" value="cs2321.TravelTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Travel" />
+        <item itemvalue="JUnit.TravelTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03e37463-c740-4480-8d7a-c5aff0df8740" name="Default Changelist" comment="" />
+      <created>1576293259585</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576293259585</updated>
+      <workItem from="1576293311171" duration="20571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TravelTest - 2019.12.14 at 16h 48m 37s.xml">
+      <configuration name="TravelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TravelTest - 2019.12.14 at 16h 56m 21s.xml">
+      <configuration name="TravelTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20571000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23170732" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" weight="0.3288889" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3288889" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3911111" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.23170732" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/net/datastructures/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-607">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/datastructures/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/datastructures/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graph_Algorithm.ipr">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1338#1339#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
+            <element signature="e#2348#2349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/TravelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/AdjListGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="31" column="48" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="48" />
+          <folding>
+            <element signature="e#2029#2030#0" expanded="true" />
+            <element signature="e#2053#2054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/DefaultComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/QuickSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding>
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs2321/Travel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5224#5294#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8 (2)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Graph_Algorithm</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>hamcrest-core-1.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

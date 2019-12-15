@@ -1,12 +1,17 @@
 package cs2321;
 
+import net.datastructures.*;
+
+import java.util.Iterator;
+
 /**
  * @author Ruihong Zhang
  * Reference textbook R14.16 P14.81 
  *
  */
 public class Travel {
-	
+
+	Graph<String, Integer> city;
 	
 	/**
 	 * @param routes: Array of routes between cities. 
@@ -15,8 +20,30 @@ public class Travel {
 	 *                Hint: In Java, use Integer.valueOf to convert string to integer. 
 	 */
 	public Travel(String [][] routes) {
-		
 		//TODO: complete the constructor
+
+
+		city = new AdjListGraph<>(true);
+		for(int i = 0; i <= routes.length - 1; i++) {
+			Vertex<String> v = null;
+			Vertex<String> u = null;
+			Boolean vv = false;
+			Boolean uu = false;
+			for(Vertex<String> x : city.vertices()) {
+				if(x.getElement().equals(routes[i][0])) {
+					v = x;
+					vv = true;
+				}
+				if(x.getElement().equals(routes[i][1])) {
+					u = x;
+					uu = true;
+				}
+			}
+			if (!vv) v = city.insertVertex(routes[i][0]);
+			if(!uu) u = city.insertVertex(routes[i][1]);
+			city.insertEdge(v, u, Integer.valueOf(routes[i][2]));
+		}
+
 		
 	}
 	
@@ -42,8 +69,9 @@ public class Travel {
 	public Iterable<String> DFSRoute(String departure, String destination ) {
 
 		//TODO: find the path based Depth First Search and return it
-		
 		return null;
+
+
 	}
 	
 	
@@ -87,7 +115,7 @@ public class Travel {
 	 *                           V
 	 *                        /  |  \
 	 *                       /   |    \
-	 *                      B    A     F  
+	 *                      B    A     F
 	 *              your algorithm below should visit the outgoing edges of V in the order of A,B,F.
 	 *              This means you will need to create a helper function to sort the outgoing edges by 
 	 *              the opposite city names.
@@ -97,10 +125,61 @@ public class Travel {
 
 	public int DijkstraRoute(String departure, String destination, DoublyLinkedList<String> itinerary ) {
 		
-		//TODO: find the path based Breadth First Search, update itinerary and return the cost
-		
-		return 0;
-		
+		// TODO: find the path based Dijkstra Search, update itinerary and return the cost
+
+		Vertex<String> from = null;
+		Vertex<String> to = null;
+
+		for(Vertex<String> v : city.vertices()) {
+			if (v.getElement().equals(departure)) {
+				from = v;
+			}
+			if (v.getElement().equals(destination)) {
+				to = v;
+			}
+		}
+		Map<Vertex<String>, Integer> shortest_path = dijk(city, from);
+		return shortest_path.get(to);
+	}
+
+	public Map<Vertex<String>, Integer> dijk(Graph<String,Integer> g, Vertex<String> src) {
+
+		Map<Vertex<String>, Integer> distance = new HashMap<>();
+		Map<Vertex<String>, Integer> cloud = new HashMap<>();
+		AdaptablePriorityQueue<Integer, Vertex<String>> pq;
+		pq = new HeapPQ<>();
+		Map<Vertex<String>, Entry<Integer,Vertex<String>>> pqTokens;
+		pqTokens = new HashMap<>();
+
+		for (Vertex<String> v : g.vertices()) {
+			if(v== src) {
+				distance.put(v, 0);
+			}
+			else
+				distance.put(v, Integer.MAX_VALUE);
+			pqTokens.put(v, pq.insert(distance.get(v), v));
+		}
+
+		while(!pq.isEmpty()) {
+			Entry<Integer, Vertex<String>> entry = pq.removeMin();
+			int key = entry.getKey();
+			Vertex<String> u = entry.getValue();
+			cloud.put(u, key);
+			pqTokens.remove(u);
+
+			for(Edge<Integer> e : sortedOutgoingEdges(u)) {
+				Vertex<String> v = g.opposite(u, e);
+				if(cloud.get(v) == null) {
+					int wgt = e.getElement();
+					if(distance.get(u) + wgt < distance.get(v)) {
+						distance.put(v, distance.get(u) + wgt);
+						pq.replaceKey(pqTokens.get(v), distance.get(v));
+					}
+				}
+			}
+		}
+
+		return cloud;
 	}
 	
 	
@@ -112,12 +191,42 @@ public class Travel {
 	 * @param v: vertex v
 	 * @return a list of edges ordered by edge's name
 	 */
-	/*
 	public Iterable<Edge<Integer>> sortedOutgoingEdges(Vertex<String> v)  {
-		
+
 		//TODO: sort the outgoing edges and return the sorted list
-		
-		return null;
+		QuickSort<String> sort = new QuickSort<>();
+		int j = 0;
+		for (Edge<Integer> e : city.outgoingEdges(v)) { j++; }
+
+		String[] vertices = new String[j];
+		int i = 0;
+		for(Edge<Integer> e : city.outgoingEdges(v)) {
+			vertices[i] = city.opposite(v, e).getElement();
+		}
+		sort.sort(vertices);
+		ArrayList<Edge<Integer>> Edge = new ArrayList<>();
+		int k = 0;
+		for(Edge<Integer> e : city.outgoingEdges(v)) {
+			if(city.opposite(v, e).getElement().equals(vertices[k])) {
+				Edge.addLast(e);
+			}
+		}
+		Iterable<Edge<Integer>> it = () -> Edge.iterator();
+		return it;
+
 	}
-	*/
+
+	public static void main(String[] args) {
+
+		String routes[][] = {  {"A","B","8"},
+				{"A","D","1"},
+				{"B","C","11"},
+				{"C","D","1"}};
+
+		Travel T = new Travel(routes);
+		DoublyLinkedList<String> thing = new DoublyLinkedList<>();
+		int a = T.DijkstraRoute(routes[0][0], routes[3][0], thing);
+		System.out.println(a);
+
+	}
 }
