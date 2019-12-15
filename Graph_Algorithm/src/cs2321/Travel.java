@@ -70,9 +70,34 @@ public class Travel {
 
 		//TODO: find the path based Depth First Search and return it
 		return null;
-
-
 	}
+
+	public void DFS(Graph<Vertex<String>, Integer> g,
+					Vertex<String> u, HashMap<Vertex<String>, Edge<Integer>> forest) {
+		for(Edge<Integer> e : sortedOutgoingEdges(u)) {
+			Vertex<String> v = g.opposite(u, e);
+			if(!known.contains(v)) {
+				forest.put(v, e);
+				DFS(g, v, known, forest);
+			}
+		}
+	}
+
+	public DoublyLinkedList<Edge<Integer>> constructPath(Graph<Vertex<String>, Integer> g, Vertex<String> u,
+														 Vertex<String> v, Map<Vertex<String>, Edge<Integer>> forest) {
+		DoublyLinkedList<Edge<Integer>> path = new DoublyLinkedList<>();
+		if(forest.get(v) != null) {
+			Vertex<String> walk = v;
+			while(walk != u) {
+				Edge<Integer> edge = forest.get(walk);
+				path.addFirst(edge);
+				walk = g.opposite(walk, edge);
+			}
+
+		}
+	}
+
+
 	
 	
 	
@@ -101,6 +126,26 @@ public class Travel {
 		//TODO: find the path based Breadth First Search and return it
 		
 		return null;
+	}
+
+	public void BFS(Graph<Vertex<String>, Integer> g, Vertex<String> s, DoublyLinkedList<Vertex<String>> known,
+					Map<Vertex<String>, Edge<Integer>> forest) {
+		DoublyLinkedList<Vertex<String>> level = new DoublyLinkedList<>();
+		known.addLast(s);
+		level.addLast(s);
+		while(!level.isEmpty()) {
+			DoublyLinkedList<Vertex<String>> nextLevel = new DoublyLinkedList<>();
+			for(Vertex<String> u : level)
+				for(Edge<Integer> e : sortedOutgoingEdges(u)) {
+					Vertex<String> v = g.opposite(u, e);
+					if(!known.contains(v)) {
+						known.addLast(v);
+						forest.put(v, e);
+						nextLevel.addLast(v);
+					}
+				}
+			level = nextLevel;
+		}
 	}
 	
 	/**
@@ -178,7 +223,6 @@ public class Travel {
 				}
 			}
 		}
-
 		return cloud;
 	}
 	

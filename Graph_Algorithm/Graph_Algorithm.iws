@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e37463-c740-4480-8d7a-c5aff0df8740" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Graph_Algorithm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Graph_Algorithm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/Course.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/CourseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/CourseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/Islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/Islands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/IslandsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/IslandsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/Travel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/Travel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cs2321/TravelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cs2321/TravelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/AdaptablePriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/AdaptablePriorityQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/BinaryTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/CircularQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/CircularQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Deque.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Deque.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Entry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/List.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/PositionalList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/PositionalList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/PriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/PriorityQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Queue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/SortedMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/SortedMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Stack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/net/datastructures/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/net/datastructures/Vertex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/AdjListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/AdjListGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs2321/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph_Algorithm.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Graph_Algorithm.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs2321/Travel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs2321/Travel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -43,11 +17,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs2321/Travel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+            <state relative-caret-position="383">
+              <caret line="143" column="45" lean-forward="true" selection-start-line="143" selection-start-column="45" selection-end-line="143" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5224#5294#0" />
               </folding>
             </state>
           </provider>
@@ -180,7 +153,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576368819090" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576373016687" />
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -247,7 +220,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576293259585</updated>
-      <workItem from="1576293311171" duration="20571000" />
+      <workItem from="1576293311171" duration="23979000" />
     </task>
     <servers />
   </component>
@@ -260,10 +233,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20571000" />
+    <option name="totallyTimeSpent" value="23979000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="1" y="1" width="639" height="798" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -271,7 +244,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23170732" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.48387095" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.3288889" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -411,13 +384,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/src.zip!/java/lang/Iterable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs2321/Travel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+        <state relative-caret-position="383">
+          <caret line="143" column="45" lean-forward="true" selection-start-line="143" selection-start-column="45" selection-end-line="143" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5224#5294#0" />
           </folding>
         </state>
       </provider>
