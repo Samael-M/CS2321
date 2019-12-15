@@ -49,6 +49,26 @@ public class DoublyLinkedList<E> implements PositionalList<E> {
 		trailer = new Node<>(null, header, null);
 		header.setNext(trailer);
 	}
+	//Reverses DLL
+	public void reverse() {
+		Node temp = null;
+		Node current = header;
+
+        // swap next and prev for all nodes of
+		// doubly linked list
+		while (current != null) {
+			temp = current.prev;
+			current.prev = current.next;
+			current.next = temp;
+			current = current.prev;
+		}
+
+        // Before changing head, check for the cases like empty
+        // list and list with only one node
+		if (temp != null) {
+			header = temp.prev;
+		}
+	}
 
 	/**
 	 * Checks to see if Position<E> p is valid, by checking to see if its a instance of the Node being used and checking to see if it is in the list

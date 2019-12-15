@@ -18,20 +18,30 @@ public class Course {
 	 */
 	public Course(String courses[][]) {
 		//TODO: complete the constructor
-		courseMap = new AdjListGraph<>();
-		for(int i = 0; i < courses.length - 1; i++) {
+		courseMap = new AdjListGraph<>(true);
+		for(int i = 0; i < courses.length; i++) {
 			courseMap.insertVertex(courses[i][0]);
 		}
 		int i = 0;
 		for(Vertex<String> v : courseMap.vertices()) {
 			int k = 0;
 			for(Vertex<String> u : courseMap.vertices()) {
-				if(courses[i][k].equals(u.getElement()) && k < courses[i].length - 1 && i < courses.length) {
-					courseMap.insertEdge(v, u, courses[i][k]);
-				} else break;
-				k++;
+				if(k < courses[i].length) {
+					if(courses[i][k].equals(u.getElement())) {
+						courseMap.insertEdge(v, u, "Arrow");
+						k++;
+					}
+				}
 			}
 			i++;
+		}
+		int count = 0;
+		for(Vertex<String> v : courseMap.vertices()) {
+			count++;
+			System.out.println(count + " " + v.getElement() + " ");
+			for(Edge<String> e: courseMap.outgoingEdges(v)) {
+				System.out.print(v.getElement() + " is pre to: " + courseMap.opposite(v, e).getElement());
+			}
 		}
 	}
 	
@@ -40,13 +50,17 @@ public class Course {
 	 * @return find the earliest semester that the given course could be taken by a students after taking all the prerequisites. 
 	 */
 	public int whichSemester(String course) {
-		
-		DoublyLinkedList<Vertex<String>> topo = topologicalSort(courseMap);
-		int count = 0;
-		for(Position<Vertex<String>> p : topo.positions()) {
-			count ++;
-		}
-		return count;
+		return 0;
+//		DoublyLinkedList<Vertex<String>> topo = topologicalSort(courseMap);
+//		int count = 0;
+//		for(Position<Vertex<String>> p : topo.positions()) {
+//			//System.out.println(p.getElement().getElement());
+//			if(!p.getElement().getElement().equals(course)) {
+//				count++;
+//			} else break;
+//		}
+//		count++;
+//		return count;
 	}
 
 	public DoublyLinkedList<Vertex<String>> topologicalSort(Graph<String, String> g) {
@@ -69,6 +83,7 @@ public class Course {
 					ready.push(v);
 			}
 		}
+		topo.reverse();
 		return topo;
 	}
 			

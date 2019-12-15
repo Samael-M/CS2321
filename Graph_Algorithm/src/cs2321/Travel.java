@@ -2,8 +2,6 @@ package cs2321;
 
 import net.datastructures.*;
 
-import java.util.Iterator;
-
 /**
  * @author Ruihong Zhang
  * Reference textbook R14.16 P14.81 
