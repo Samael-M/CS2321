@@ -23,23 +23,25 @@ public class Travel {
 
 		city = new AdjListGraph<>(true);
 		for(int i = 0; i <= routes.length - 1; i++) {
-			Vertex<String> v = null;
-			Vertex<String> u = null;
-			Boolean vv = false;
-			Boolean uu = false;
-			for(Vertex<String> x : city.vertices()) {
-				if(x.getElement().equals(routes[i][0])) {
-					v = x;
-					vv = true;
-				}
-				if(x.getElement().equals(routes[i][1])) {
-					u = x;
-					uu = true;
-				}
-			}
-			if (!vv) v = city.insertVertex(routes[i][0]);
-			if(!uu) u = city.insertVertex(routes[i][1]);
-			city.insertEdge(v, u, Integer.valueOf(routes[i][2]));
+//			Vertex<String> v = null;
+//			Vertex<String> u = null;
+//			Boolean vv = false;
+//			Boolean uu = false;
+//			for(Vertex<String> x : city.vertices()) {
+//				if(x.getElement().equals(routes[i][0])) {
+//					v = x;
+//					vv = true;
+//				}
+//				if(x.getElement().equals(routes[i][1])) {
+//					u = x;
+//					uu = true;
+//				}
+//			}
+//			if (!vv) v = city.insertVertex(routes[i][0]);
+//			if(!uu) u = city.insertVertex(routes[i][1]);
+//			city.insertEdge(v, u, Integer.valueOf(routes[i][2]));
+			city.insertEdge(city.insertVertex(routes[i][0]),
+					city.insertVertex(routes[i][1]), Integer.valueOf(routes[i][2]));
 		}
 
 //		for(int i = 0; i <= routes.length - 1; i++) {
@@ -226,6 +228,7 @@ public class Travel {
 			}
 			if (v.getElement().equals(destination)) {
 				to = v;
+
 			}
 		}
 		Map<Vertex<String>, Integer> shortest_path = dijk(city, from);
@@ -300,8 +303,7 @@ public class Travel {
 				Edge.addLast(e);
 			}
 		}
-		Iterable<Edge<Integer>> it = () -> Edge.iterator();
-		return it;
+		return Edge;
 
 	}
 

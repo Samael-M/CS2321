@@ -110,6 +110,11 @@ public class AdjListGraph<V, E> implements Graph<V, E> {
 	 */
 	@TimeComplexityExpected("O(1)")
 	public Vertex<V> insertVertex(V o) {
+		for(Vertex<V> x : vertices) {
+			if(o.equals(x.getElement())) {
+				return x;
+			}
+		}
 		InnerVertex<V> v = new InnerVertex<>(o, isDirected);
 		v.setPostion((vertices.addLast(v)));
 		return v;
