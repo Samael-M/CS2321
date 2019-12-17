@@ -8,12 +8,16 @@ public class Partition<E> {
         public E element;
         public int size;
         public Locator<E> parent;
+
         public Locator(E elem) {
             element = elem;
             size = 1;
             parent = this;
         }
-        public E getElement() { return element; }
+
+        public E getElement() {
+            return element;
+        }
 
         private boolean validate(Partition<E> part) {
             return Partition.this == part;
@@ -34,7 +38,7 @@ public class Partition<E> {
 
     public Position<E> find(Position<E> p) {
         Locator<E> loc = validate(p);
-        if(loc.parent != loc)
+        if (loc.parent != loc)
             loc.parent = (Locator<E>) find(loc.parent);
         return loc.parent;
     }
@@ -42,8 +46,8 @@ public class Partition<E> {
     public void union(Position<E> p, Position<E> q) {
         Locator<E> a = (Locator<E>) find(p);
         Locator<E> b = (Locator<E>) find(q);
-        if(a != b) {
-            if(a.size > b.size) {
+        if (a != b) {
+            if (a.size > b.size) {
                 b.parent = a;
                 a.size += b.size;
             } else {

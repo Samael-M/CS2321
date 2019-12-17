@@ -23,7 +23,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sorts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -40,7 +41,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CourseTest">
+  <component name="RunManager" selected="JUnit.TravelTest">
     <configuration name="Travel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs2321.Travel" />
       <module name="Graph_Algorithm" />
@@ -69,6 +70,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IslandsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Graph_Algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs2321.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cs2321" />
+      <option name="MAIN_CLASS_NAME" value="cs2321.IslandsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TravelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Graph_Algorithm" />
       <extension name="coverage">
@@ -80,22 +96,6 @@
       <option name="PACKAGE_NAME" value="cs2321" />
       <option name="MAIN_CLASS_NAME" value="cs2321.TravelTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TravelTest.testDijkstraRoute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Graph_Algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cs2321.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cs2321" />
-      <option name="MAIN_CLASS_NAME" value="cs2321.TravelTest" />
-      <option name="METHOD_NAME" value="testDijkstraRoute" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CourseTest" />
         <item itemvalue="JUnit.TravelTest" />
+        <item itemvalue="JUnit.CourseTest" />
+        <item itemvalue="JUnit.IslandsTest" />
         <item itemvalue="JUnit.TravelTest.testDijkstraRoute1" />
         <item itemvalue="Application.Travel" />
-        <item itemvalue="JUnit.TravelTest.testDijkstraRoute" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +140,9 @@
       <workItem from="1576377480506" duration="9293000" />
       <workItem from="1576392614311" duration="37000" />
       <workItem from="1576441869456" duration="5361000" />
-      <workItem from="1576519196096" duration="21160000" />
+      <workItem from="1576519196096" duration="21830000" />
+      <workItem from="1576561797886" duration="65000" />
+      <workItem from="1576611414591" duration="6428000" />
     </task>
     <servers />
   </component>

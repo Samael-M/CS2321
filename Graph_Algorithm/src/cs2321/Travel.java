@@ -2,6 +2,8 @@ package cs2321;
 
 import net.datastructures.*;
 
+import java.util.Iterator;
+
 /**
  * @author Ruihong Zhang
  * Reference textbook R14.16 P14.81
@@ -26,25 +28,6 @@ public class Travel {
             city.insertEdge(city.insertVertex(routes[i][0]),
                     city.insertVertex(routes[i][1]), Integer.valueOf(routes[i][2]));
         }
-
-		//			Vertex<String> v = null;
-//			Vertex<String> u = null;
-//			Boolean vv = false;
-//			Boolean uu = false;
-//			for(Vertex<String> x : city.vertices()) {
-//				if(x.getElement().equals(routes[i][0])) {
-//					v = x;
-//					vv = true;
-//				}
-//				if(x.getElement().equals(routes[i][1])) {
-//					u = x;
-//					uu = true;
-//				}
-//			}
-//			if (!vv) v = city.insertVertex(routes[i][0]);
-//			if(!uu) u = city.insertVertex(routes[i][1]);
-//			city.insertEdge(v, u, Integer.valueOf(routes[i][2]));
-
     }
 
     /**
@@ -89,9 +72,9 @@ public class Travel {
     public void DFS(Graph<String, Integer> g,
                     Vertex<String> u, Set<Vertex<String>> known, HashMap<Vertex<String>, Edge<Integer>> forest) {
         known.add(u);
-        for(Edge<Integer> e : city.outgoingEdges(u)) {
+        for (Edge<Integer> e : city.outgoingEdges(u)) {
             Vertex<String> v = city.opposite(u, e);
-            if(!known.contains(v)) {
+            if (!known.contains(v)) {
                 forest.put(v, e);
                 DFS(city, v, known, forest);
             }
@@ -122,7 +105,7 @@ public class Travel {
      * The order of city names in the list should match order of the city names in the path.
      * @IMPORTANT_NOTE: The outgoing edges should be traversed by the order of the city names stored in
      * the opposite vertices. For example, if V has 3 outgoing edges as in the picture below,
-     *    V
+     * V
      * /  |  \
      * /   |    \
      * B    A     F
@@ -137,32 +120,38 @@ public class Travel {
 
         //TODO: find the path based Breadth First Search and return it
         Vertex<String> from = city.insertVertex(departure);
-        //Vertex<String> to = city.insertVertex(destination);
+        Vertex<String> to = city.insertVertex(destination);
 
         Set<Vertex<String>> known = new Set<>();
         HashMap<Vertex<String>, Edge<Integer>> forest = new HashMap<>();
-        HashMap<Vertex<String>, Edge<Integer>> bfs = BFS(city, from, known, forest);
+        Set<Vertex<String>> bfs = BFS(city, from, to, known, forest);
 
         ArrayList<String> route = new ArrayList<>();
-        for (Vertex<String> v : bfs.keySet()) {
-            System.out.println("ADDING LAST: " + v.getElement());
-            route.addFirst(v.getElement());
+        for (Iterator<Vertex<String>> it = bfs.iterator(); it.hasNext(); ) {
+            Vertex<String> v = it.next();
+            System.out.println("ADDING First: " + v.getElement());
+            route.addLast(v.getElement());
         }
+        ArrayList<String> arrayList = new ArrayList<>();
         return route;
     }
 
-    public HashMap<Vertex<String>, Edge<Integer>> BFS(Graph<String, Integer> g, Vertex<String> s, Set<Vertex<String>> known,
+    public Set<Vertex<String>> BFS(Graph<String, Integer> g, Vertex<String> start, Vertex<String> end,  Set<Vertex<String>> known,
                                                       HashMap<Vertex<String>, Edge<Integer>> forest) {
 
         DoublyLinkedList<Vertex<String>> level = new DoublyLinkedList<>();
-        known.add(s);
-        level.addLast(s);
+        known.add(start);
+        level.addLast(start);
         while (!level.isEmpty()) {
             DoublyLinkedList<Vertex<String>> nextLevel = new DoublyLinkedList<>();
             for (Vertex<String> u : level)
                 for (Edge<Integer> e : sortedOutgoingEdges(u)) {
                     Vertex<String> v = g.opposite(u, e);
                     if (!known.contains(v)) {
+                        if(v.getElement().equals(end.getElement())) {
+                            known.add(v);
+                            return known;
+                        }
                         known.add(v);
                         forest.put(v, e);
                         nextLevel.addLast(v);
@@ -170,7 +159,7 @@ public class Travel {
                 }
             level = nextLevel;
         }
-        return forest;
+        return known;
     }
 
     /**
@@ -181,7 +170,7 @@ public class Travel {
      * @return return the cost of the shortest path from departure to destination.
      * @IMPORTANT_NOTE: The outgoing edges should be traversed by the order of the city names stored in
      * the opposite vertices. For example, if V has 3 outgoing edges as in the picture below,
-     *    V
+     * V
      * /  |  \
      * /   |    \
      * B    A     F
@@ -225,9 +214,9 @@ public class Travel {
             Vertex<String> u = entry.getValue();
             cloud.put(u, key);
             itinerary.addLast(u.getElement());
-            if(u.getElement().equals(des.getElement())) {
-            	return cloud;
-			}
+            if (u.getElement().equals(des.getElement())) {
+                return cloud;
+            }
             pqTokens.remove(u);
             for (Edge<Integer> e : sortedOutgoingEdges(u)) {
                 Vertex<String> v = g.opposite(u, e);
@@ -268,9 +257,9 @@ public class Travel {
         }
         sort.sort(edges, city, v);
         ArrayList<Edge<Integer>> Edge = new ArrayList<>();
-        for(Edge<Integer> e : edges) {
-        	Edge.addLast(e);
-		}
+        for (Edge<Integer> e : edges) {
+            Edge.addLast(e);
+        }
         return Edge;
     }
 
