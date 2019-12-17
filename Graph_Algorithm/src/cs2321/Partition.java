@@ -14,19 +14,21 @@ public class Partition<E> {
             parent = this;
         }
         public E getElement() { return element; }
-        private boolean validate(Partition<E> universe) {
-            return Partition.this == universe;
+
+        private boolean validate(Partition<E> part) {
+            return Partition.this == part;
         }
     }
 
     public Position<E> makeCluster(E e) {
         return new Locator<E>(e);
     }
+
     private Locator<E> validate(Position<E> pos) {
-        if (!(pos instanceof Locator)) throw new IllegalArgumentException("Invalid position");
+        if (!(pos instanceof Locator)) throw new IllegalArgumentException("Invalid Position");
         Locator<E> loc = (Locator<E>) pos;
         if (!loc.validate(this))
-            throw new IllegalArgumentException("Position does not belong to this structure");
+            throw new IllegalArgumentException("Position Not Found!");
         return loc;
     }
 

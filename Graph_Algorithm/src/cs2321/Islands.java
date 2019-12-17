@@ -9,7 +9,7 @@ import net.datastructures.*;
  */
 public class Islands  {
 
-	Graph<Integer, Integer> city;
+	Graph<Integer, Integer> islands;
 
 	/**
 	 * @param numOfIslands: total number of islands. It will be numbered as 0,1,2,...
@@ -19,28 +19,24 @@ public class Islands  {
 	public Islands(int numOfIslands, int distance[][]) {
 		
 		//TODO: complete the constructor
-		city = new AdjListGraph<>(true);
+		islands = new AdjListGraph<>(true);
 
-		int num = numOfIslands;
-		int i = 0;
-		while(num != 0) {
-			city.insertVertex(i);
-			num--;
-		}
-		i = 0;
-		for(Vertex<Integer> v : city.vertices()) {
-			int k = 0;
-			for(Vertex<Integer> u : city.vertices()) {
-				if(!v.equals(u) && k < distance[i].length && i < distance.length) {
-					city.insertEdge(v, u, distance[i][k]);
+//		int num = numOfIslands;
+//		while(num != 0) {
+//			islands.insertVertex(num);
+//			num--;
+//		}
+//
+		for(int i = 0; i < distance.length; i++) {
+			for(int j = 0; j < distance[i].length; j++) {
+				if(distance[i][j] != -1) {
+					islands.insertEdge(islands.insertVertex(i), islands.insertVertex(j), distance[i][j]);
 				}
-				k++;
 			}
-			i++;
 		}
-
-
-		
+		for(Vertex<Integer> v : islands.vertices()) {
+			System.out.println(v.getElement());
+		}
 	}
 
 
@@ -50,7 +46,7 @@ public class Islands  {
 	public int Kruskal() {
 		//TODO: implement the Kruskal's algorithm and find the MST among all islands.
 
-		PositionalList<Edge<Integer>> sum = MST(city);
+		PositionalList<Edge<Integer>> sum = MST();
 		int total = 0;
 		for(Position<Edge<Integer>> s : sum.positions()) {
 			total += s.getElement().getElement();
@@ -58,24 +54,24 @@ public class Islands  {
 		return total;
 	}
 
-	public PositionalList<Edge<Integer>> MST(Graph<Integer, Integer> g) {
+	public PositionalList<Edge<Integer>> MST() {
 		PositionalList<Edge<Integer>> tree = new DoublyLinkedList<>();
 		PriorityQueue<Integer, Edge<Integer>>pq = new HeapPQ<>();
 		Partition<Vertex<Integer>> forest = new Partition<>();
 
 		Map<Vertex<Integer>,Position<Vertex<Integer>>>positions = new HashMap<>();
 
-		for(Vertex<Integer> v : city.vertices())
+		for(Vertex<Integer> v : islands.vertices())
 			positions.put(v, forest.makeCluster(v));
 
-		for(Edge<Integer>e : city.edges())
+		for(Edge<Integer>e : islands.edges())
 			pq.insert(e.getElement(), e);
 
-		int size = city.numVertices();
+		int size = islands.numVertices();
 		while(tree.size() != size - 1 && !pq.isEmpty()) {
 			Entry<Integer, Edge<Integer>>entry = pq.removeMin();
 			Edge<Integer>edge = entry.getValue();
-			Vertex<Integer>[ ] endpoints = city.endVertices(edge);
+			Vertex<Integer>[ ] endpoints = islands.endVertices(edge);
 			Position<Vertex<Integer>>a = forest.find(positions.get(endpoints[0]));
 			Position<Vertex<Integer>>b = forest.find(positions.get(endpoints[1]));
 			if(a != b) {

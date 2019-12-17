@@ -6,6 +6,7 @@ import net.datastructures.*;
  * @author Ruihong Zhang
  * Reference textbook R14.16 P14.81
  */
+@SuppressWarnings("Duplicates")
 public class Travel {
 
     Graph<String, Integer> city;
@@ -21,8 +22,12 @@ public class Travel {
 
 
         city = new AdjListGraph<>(false);
-        for (int i = 0; i <= routes.length - 1; i++) {
-//			Vertex<String> v = null;
+        for (int i = 0; i < routes.length; i++) {
+            city.insertEdge(city.insertVertex(routes[i][0]),
+                    city.insertVertex(routes[i][1]), Integer.valueOf(routes[i][2]));
+        }
+
+		//			Vertex<String> v = null;
 //			Vertex<String> u = null;
 //			Boolean vv = false;
 //			Boolean uu = false;
@@ -39,17 +44,6 @@ public class Travel {
 //			if (!vv) v = city.insertVertex(routes[i][0]);
 //			if(!uu) u = city.insertVertex(routes[i][1]);
 //			city.insertEdge(v, u, Integer.valueOf(routes[i][2]));
-            city.insertEdge(city.insertVertex(routes[i][0]),
-                    city.insertVertex(routes[i][1]), Integer.valueOf(routes[i][2]));
-        }
-
-		/* Test to see if graph is setup right
-		for(Vertex<String> v : city.vertices()) {
-			for(Edge<Integer> e : city.outgoingEdges(v)) {
-				System.out.println("Distance from " + v.getElement() + " to " + city.opposite(v, e).getElement() + " is " + e.getElement());
-			}
-		}*/
-
 
     }
 
@@ -73,39 +67,33 @@ public class Travel {
      */
     public Iterable<String> DFSRoute(String departure, String destination) {
         //TODO: find the path based Depth First Search and return it
-        Vertex<String> from = null;
-        Vertex<String> to = null;
 
-        for (Vertex<String> v : city.vertices()) {
-            if (v.getElement().equals(departure)) {
-                from = v;
-            }
-            if (v.getElement().equals(destination)) {
-                to = v;
-            }
-        }
-        DoublyLinkedList<Vertex<String>> known = new DoublyLinkedList<>();
+        Vertex<String> from = city.insertVertex(departure);
+        Vertex<String> to = city.insertVertex(destination);
+
+
+        Set<Vertex<String>> known = new Set<>();
         HashMap<Vertex<String>, Edge<Integer>> forest = new HashMap<>();
         DFS(city, from, known, forest);
         DoublyLinkedList<Edge<Integer>> dfs = constructPath(city, from, to, forest);
 
         ArrayList<String> path = new ArrayList<>();
         for (Position<Edge<Integer>> p : dfs.positions()) {
+            System.out.println("ADDING LAST: " + p.getElement().getElement().toString());
             path.addLast(p.getElement().getElement().toString());
         }
-        Iterable<String> it = () -> path.iterator();
-        return it;
+
+        return path;
     }
 
     public void DFS(Graph<String, Integer> g,
-                    Vertex<String> u, DoublyLinkedList<Vertex<String>> known, HashMap<Vertex<String>, Edge<Integer>> forest) {
-        for (Edge<Integer> e : sortedOutgoingEdges(u)) {
-            Vertex<String> v = g.opposite(u, e);
-            for (Vertex<String> x : known) {
-                if (x.equals(v)) {
-                    forest.put(v, e);
-                    DFS(g, v, known, forest);
-                }
+                    Vertex<String> u, Set<Vertex<String>> known, HashMap<Vertex<String>, Edge<Integer>> forest) {
+        known.add(u);
+        for(Edge<Integer> e : city.outgoingEdges(u)) {
+            Vertex<String> v = city.opposite(u, e);
+            if(!known.contains(v)) {
+                forest.put(v, e);
+                DFS(city, v, known, forest);
             }
         }
     }
@@ -113,6 +101,7 @@ public class Travel {
     public DoublyLinkedList<Edge<Integer>> constructPath(Graph<String, Integer> g, Vertex<String> u,
                                                          Vertex<String> v, Map<Vertex<String>, Edge<Integer>> forest) {
         DoublyLinkedList<Edge<Integer>> path = new DoublyLinkedList<>();
+
         if (forest.get(v) != null) {
             Vertex<String> walk = v;
             while (walk != u) {
@@ -133,7 +122,7 @@ public class Travel {
      * The order of city names in the list should match order of the city names in the path.
      * @IMPORTANT_NOTE: The outgoing edges should be traversed by the order of the city names stored in
      * the opposite vertices. For example, if V has 3 outgoing edges as in the picture below,
-     * V
+     *    V
      * /  |  \
      * /   |    \
      * B    A     F
@@ -147,43 +136,36 @@ public class Travel {
     public Iterable<String> BFSRoute(String departure, String destination) {
 
         //TODO: find the path based Breadth First Search and return it
-        Vertex<String> from = null;
-        Vertex<String> to = null;
+        Vertex<String> from = city.insertVertex(departure);
+        //Vertex<String> to = city.insertVertex(destination);
 
-        for (Vertex<String> v : city.vertices()) {
-            if (v.getElement().equals(departure)) {
-                from = v;
-            }
-            if (v.getElement().equals(destination)) {
-                to = v;
-            }
-        }
-        DoublyLinkedList<Vertex<String>> known = new DoublyLinkedList<>();
+        Set<Vertex<String>> known = new Set<>();
         HashMap<Vertex<String>, Edge<Integer>> forest = new HashMap<>();
         HashMap<Vertex<String>, Edge<Integer>> bfs = BFS(city, from, known, forest);
+
         ArrayList<String> route = new ArrayList<>();
-        for (Edge<Integer> e : bfs.values()) {
-            route.addLast(e.getElement().toString());
+        for (Vertex<String> v : bfs.keySet()) {
+            System.out.println("ADDING LAST: " + v.getElement());
+            route.addFirst(v.getElement());
         }
         return route;
     }
 
-    public HashMap<Vertex<String>, Edge<Integer>> BFS(Graph<String, Integer> g, Vertex<String> s, DoublyLinkedList<Vertex<String>> known,
+    public HashMap<Vertex<String>, Edge<Integer>> BFS(Graph<String, Integer> g, Vertex<String> s, Set<Vertex<String>> known,
                                                       HashMap<Vertex<String>, Edge<Integer>> forest) {
+
         DoublyLinkedList<Vertex<String>> level = new DoublyLinkedList<>();
-        known.addLast(s);
+        known.add(s);
         level.addLast(s);
         while (!level.isEmpty()) {
             DoublyLinkedList<Vertex<String>> nextLevel = new DoublyLinkedList<>();
             for (Vertex<String> u : level)
                 for (Edge<Integer> e : sortedOutgoingEdges(u)) {
                     Vertex<String> v = g.opposite(u, e);
-                    for (Vertex<String> x : known) {
-                        if (x.equals(v)) {
-                            known.addLast(v);
-                            forest.put(v, e);
-                            nextLevel.addLast(v);
-                        }
+                    if (!known.contains(v)) {
+                        known.add(v);
+                        forest.put(v, e);
+                        nextLevel.addLast(v);
                     }
                 }
             level = nextLevel;
@@ -214,17 +196,9 @@ public class Travel {
 
         // TODO: find the path based Dijkstra Search, update itinerary and return the cost
 
-        Vertex<String> from = null;
-        Vertex<String> to = null;
+        Vertex<String> from = city.insertVertex(departure);
+        Vertex<String> to = city.insertVertex(destination);
 
-        for (Vertex<String> v : city.vertices()) {
-            if (v.getElement().equals(departure)) {
-                from = v;
-            }
-            if (v.getElement().equals(destination)) {
-                to = v;
-            }
-        }
         Map<Vertex<String>, Integer> shortest_path = dijk(city, from, to, itinerary);
         return shortest_path.get(to);
     }

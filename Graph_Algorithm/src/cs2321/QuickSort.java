@@ -5,7 +5,6 @@ import net.datastructures.*;
 public class QuickSort {
 
 	DefaultComparator C = new DefaultComparator();
-	int count = 0;
 	Graph<String, Integer> city;
 	Vertex<String> v;
 
@@ -17,7 +16,6 @@ public class QuickSort {
 	}
 
 	public void sort(Edge<Integer>[] array, int p, int r) {
-		count++;
 		if(p < r) {
 			int q = partition(array, p, r);
 			sort(array, p, q - 1);
