@@ -5,14 +5,15 @@ import cs2321.*;
 
 public class QuickSortTest{
 	 Sorter <Integer> sorter;
+	 Sorter <String> sorter2;
 	
 	@Before
 	// These are the steup sto test each sorting algorithm, uncomment the alg you need to test
 	//public void setup() { sorter = new InPlaceHeapSort<>(); }
 	//public void setup() { sorter = new InPlaceSelectionSort<>(); }
 	//public void setup() { sorter = new InPlaceInsertionSort<>(); }
-	public void setup() { sorter = new MergeSort<>(); }
-	//public void setup() { sorter = new QuickSort<>(); }
+	//public void setup() { sorter = new MergeSort<>(); }
+	public void setup() { sorter2 = new QuickSort<>(); }
 	//public void setup() { sorter = new HeapPQSort<>(); }
 	
 	@Test
@@ -75,6 +76,13 @@ public class QuickSortTest{
 		sorter.sort(data);
 		assertArrayEquals(expectedData, data);
 	}
-	
-	
+
+	@Test
+	public void test6() {
+		String[] data={"E", "C", "A"};
+		String[] expectedData={"A", "C", "E"};
+
+		sorter2.sort(data);
+		assertArrayEquals(expectedData, data);
+	}
 }

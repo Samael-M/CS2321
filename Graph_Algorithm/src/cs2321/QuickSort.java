@@ -1,13 +1,23 @@
 package cs2321;
-public class QuickSort<E extends Comparable<E>> implements Sorter<E> {
+
+import net.datastructures.*;
+
+public class QuickSort {
 
 	DefaultComparator C = new DefaultComparator();
+	int count = 0;
+	Graph<String, Integer> city;
+	Vertex<String> v;
+
 	@TimeComplexity("O(n lg n)")
-	public void sort(E[] array) {
-		sort(array, 0, array.length - 2);
+	public void sort(Edge<Integer>[] array, Graph<String, Integer> graph, Vertex<String> vertex) {
+		city = graph;
+		v = vertex;
+		sort(array, 0, array.length - 1);
 	}
 
-	public void sort(E[] array, int p, int r) {
+	public void sort(Edge<Integer>[] array, int p, int r) {
+		count++;
 		if(p < r) {
 			int q = partition(array, p, r);
 			sort(array, p, q - 1);
@@ -15,11 +25,11 @@ public class QuickSort<E extends Comparable<E>> implements Sorter<E> {
 		}
 	}
 
-	public int partition(E[] array, int p, int r){
+	public int partition(Edge<Integer>[] array, int p, int r){
 		int i = p - 1;
-		E pivot = array[r];
+		String pivot = city.opposite(v, array[r]).getElement();
 		for(int j = p; j <= r - 1; j++) {
-			if(C.compare(array[j], pivot) < 0) {
+			if(C.compare(city.opposite(v, array[j]).getElement(), pivot) < 0) {
 				i++;
 				swap(array, i, j);
 			}
@@ -28,8 +38,8 @@ public class QuickSort<E extends Comparable<E>> implements Sorter<E> {
 		return i + 1;
 	}
 
-	public void swap(E[] array, int i, int j) {
-		E e = array[i];
+	public void swap(Edge<Integer>[] array, int i, int j) {
+		Edge<Integer> e = array[i];
 		array[i] = array[j];
 		array[j] = e;
 	}

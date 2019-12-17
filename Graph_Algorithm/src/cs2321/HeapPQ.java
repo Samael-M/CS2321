@@ -160,7 +160,7 @@ public class HeapPQ<K,V> implements AdaptablePriorityQueue<K,V> {
 
 	@TimeComplexity("O(1)")
 	public void bubble(int j) {
-		if (j > 0 && C.compare(heap.get(j).getKey(), heap.get(parent(j)).getKey()) > 0) {
+		if (j > 0 && C.compare(heap.get(j).getKey(), heap.get(parent(j)).getKey()) < 0) {
 			upheap(j);
 		} else downheap(j);
 	}

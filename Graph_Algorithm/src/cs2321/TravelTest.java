@@ -96,7 +96,7 @@ public class TravelTest {
 		DoublyLinkedList<String> path = new DoublyLinkedList<String>();
 		int distance = T.DijkstraRoute("A", "C", path);
 		
-		assertEquals(2,distance);
+		assertEquals(2, distance);
 		for (String s: path) {
 			list.add(s);
 		}

@@ -2,12 +2,18 @@ package cs2321;
 public class QuickSort<E extends Comparable<E>> implements Sorter<E> {
 
 	DefaultComparator C = new DefaultComparator();
+	int count = 0;
 	@TimeComplexity("O(n lg n)")
 	public void sort(E[] array) {
 		sort(array, 0, array.length - 1);
 	}
 
 	public void sort(E[] array, int p, int r) {
+		count++;
+		System.out.println("Loop: " + count);
+		for(E e : array) {
+			System.out.println("DATA: " + e);
+		}
 		if(p < r) {
 			int q = partition(array, p, r);
 			sort(array, p, q - 1);

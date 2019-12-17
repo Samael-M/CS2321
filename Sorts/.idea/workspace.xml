@@ -24,7 +24,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572305269239" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/git-bash.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -44,7 +44,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SortTimer">
+  <component name="RunManager" selected="JUnit.QuickSortTest.test6">
     <configuration name="SortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs2321.SortTimer" />
       <module name="Sorts" />
@@ -86,7 +86,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSortTest.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sorts" />
       <extension name="coverage">
         <pattern>
@@ -96,7 +96,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cs2321" />
       <option name="MAIN_CLASS_NAME" value="cs2321.QuickSortTest" />
-      <option name="METHOD_NAME" value="test4" />
+      <option name="METHOD_NAME" value="test6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QuickSortTest.test6" />
+        <item itemvalue="JUnit.QuickSortTest" />
         <item itemvalue="Application.SortTimer" />
         <item itemvalue="Application.SortTiming" />
-        <item itemvalue="JUnit.QuickSortTest" />
         <item itemvalue="JUnit.UnorderedPQTest" />
-        <item itemvalue="JUnit.QuickSortTest.test4" />
       </list>
     </recent_temporary>
   </component>
@@ -142,6 +142,7 @@
       <workItem from="1572389916692" duration="14036000" />
       <workItem from="1572414223086" duration="522000" />
       <workItem from="1572906810453" duration="67000" />
+      <workItem from="1576525116351" duration="1816000" />
     </task>
     <servers />
   </component>

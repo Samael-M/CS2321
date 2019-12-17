@@ -34,15 +34,6 @@ public class MergeSort<E extends Comparable<E>> implements Sorter<E> {
 		}
 	}
 
-//	public E[] copyOfRange(E[] a, int from, int to) {
-//		int j = to - from;
-//		E[] temp = (E[]) new Object[j];
-//		for(int i = from; i < to; i++) {
-//			temp[i] = a[i];
-//		}
-//		return temp;
-//
-//	}
 
 }
 
