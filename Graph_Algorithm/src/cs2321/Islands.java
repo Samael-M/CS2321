@@ -1,8 +1,8 @@
 package cs2321;
-
 import net.datastructures.*;
 
 /**
+ * SamUeL mILnEr
  * @author Ruihong Zhang
  * Reference: Textbook R-14.27 on page 679
  */
@@ -25,9 +25,6 @@ public class Islands {
                     islands.insertEdge(islands.insertVertex(i), islands.insertVertex(j), distance[i][j]);
                 }
             }
-        }
-        for (Vertex<Integer> v : islands.vertices()) {
-            System.out.println(v.getElement());
         }
     }
 

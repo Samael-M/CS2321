@@ -41,7 +41,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TravelTest">
+  <component name="RunManager" selected="JUnit.CourseTest">
     <configuration name="Travel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs2321.Travel" />
       <module name="Graph_Algorithm" />
@@ -118,8 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TravelTest" />
         <item itemvalue="JUnit.CourseTest" />
+        <item itemvalue="JUnit.TravelTest" />
         <item itemvalue="JUnit.IslandsTest" />
         <item itemvalue="JUnit.TravelTest.testDijkstraRoute1" />
         <item itemvalue="Application.Travel" />
@@ -142,7 +142,7 @@
       <workItem from="1576441869456" duration="5361000" />
       <workItem from="1576519196096" duration="21830000" />
       <workItem from="1576561797886" duration="65000" />
-      <workItem from="1576611414591" duration="6428000" />
+      <workItem from="1576611414591" duration="7339000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,11 @@
 package cs2321;
-
 import net.datastructures.*;
-
 import java.util.Iterator;
 
 /**
  * Samuel Milner
- *
- * This is the sloppiest most in-effient, over complicated code I have ever produced, but it passes test and thats good enough
+ * <p>
+ * This is the sloppiest most inefficient, over complicated code I have ever produced, but it passes test and thats good enough
  * for me right now in the hecticness of finals week.
  *
  * @author Ruihong Zhang
@@ -25,9 +23,6 @@ public class Travel {
      *                Hint: In Java, use Integer.valueOf to convert string to integer.
      */
     public Travel(String[][] routes) {
-        //TODO: complete the constructor
-
-
         city = new AdjListGraph<>(false);
         for (int i = 0; i < routes.length; i++) {
             city.insertEdge(city.insertVertex(routes[i][0]),
@@ -59,7 +54,6 @@ public class Travel {
         Vertex<String> from = city.insertVertex(departure);
         Vertex<String> to = city.insertVertex(destination);
 
-
         Set<Vertex<String>> known = new Set<>();
         HashMap<Vertex<String>, Edge<Integer>> forest = new HashMap<>();
 
@@ -71,41 +65,23 @@ public class Travel {
         ArrayList<String> done = new ArrayList<>();
         for (Iterator<String> it = route.iterator(); it.hasNext(); ) {
             String s = it.next();
-            System.out.println(s + "------------------");
             done.addLast(s);
         }
-
         return done;
     }
 
     public Graph<String, Integer> DFS(Graph<String, Integer> graph,
-                    Vertex<String> u, Set<Vertex<String>> known, HashMap<Vertex<String>, Edge<Integer>> forest) {
+                                      Vertex<String> u, Set<Vertex<String>> known, HashMap<Vertex<String>, Edge<Integer>> forest) {
         known.add(u);
         graph.insertVertex(u.getElement());
         for (Edge<Integer> e : sortedOutgoingEdges(u)) {
             Vertex<String> v = city.opposite(u, e);
             if (!known.contains(v)) {
-               // forest.put(v, e);
                 graph.insertEdge(graph.insertVertex(u.getElement()), graph.insertVertex(v.getElement()), e.getElement());
                 return DFS(graph, v, known, forest);
             }
         }
         return graph;
-    }
-
-    public DoublyLinkedList<Edge<Integer>> constructPath(Graph<String, Integer> g, Vertex<String> u,
-                                                         Vertex<String> v, Map<Vertex<String>, Edge<Integer>> forest) {
-        DoublyLinkedList<Edge<Integer>> path = new DoublyLinkedList<>();
-
-        if (forest.get(v) != null) {
-            Vertex<String> walk = v;
-            while (walk != u) {
-                Edge<Integer> edge = forest.get(walk);
-                path.addFirst(edge);
-                walk = g.opposite(walk, edge);
-            }
-        }
-        return path;
     }
 
 
@@ -137,7 +113,7 @@ public class Travel {
         Set<Vertex<String>> known = new Set<>();
         HashMap<Vertex<String>, Edge<Integer>> forest = new HashMap<>();
         Graph<String, Integer> graph = new AdjListGraph<>(true);
-              graph = BFS(city, from, to, known, forest);
+        graph = BFS(city, from, to, known, forest);
 
         Set<String> route = new Set<>();
         route = backwards(graph, to, route);
@@ -165,8 +141,8 @@ public class Travel {
     }
 
 
-    public Graph<String, Integer> BFS(Graph<String, Integer> g, Vertex<String> start, Vertex<String> end,  Set<Vertex<String>> known,
-                                   HashMap<Vertex<String>, Edge<Integer>> forest) {
+    public Graph<String, Integer> BFS(Graph<String, Integer> g, Vertex<String> start, Vertex<String> end, Set<Vertex<String>> known,
+                                      HashMap<Vertex<String>, Edge<Integer>> forest) {
 
         Graph<String, Integer> graph = new AdjListGraph<>(true);
 
@@ -174,7 +150,6 @@ public class Travel {
 
         known.add(start);
         graph.insertVertex(start.getElement());
-        //System.out.println("INSERTING : " + start.getElement());
         level.addLast(start);
         while (!level.isEmpty()) {
             DoublyLinkedList<Vertex<String>> nextLevel = new DoublyLinkedList<>();
@@ -182,21 +157,18 @@ public class Travel {
                 for (Edge<Integer> e : sortedOutgoingEdges(u)) {
                     Vertex<String> v = g.opposite(u, e);
                     if (!known.contains(v)) {
-                        if(v.getElement().equals(end.getElement())) {
+                        if (v.getElement().equals(end.getElement())) {
                             known.add(v);
                             graph.insertEdge(graph.insertVertex(u.getElement()), graph.insertVertex(v.getElement()), e.getElement());
-                            //System.out.println("INSERTING EDGE FROM : " + u.getElement() + " TO : " + v.getElement());
                             return graph;
                         }
                         known.add(v);
                         graph.insertEdge(graph.insertVertex(u.getElement()), graph.insertVertex(v.getElement()), e.getElement());
-                        //System.out.println("INSERTING EDGE FROM : " + u.getElement() + " TO : " + v.getElement());
                         nextLevel.addLast(v);
                     }
                 }
             level = nextLevel;
         }
-
         return graph;
     }
 

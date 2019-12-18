@@ -1,8 +1,8 @@
 package cs2321;
-
 import net.datastructures.*;
 
 /**
+ * Samuel Milner
  * @author Ruihong Zhang
  * Reference: Text book: R14.17 on page 678
  */
