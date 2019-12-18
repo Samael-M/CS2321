@@ -1,5 +1,7 @@
 package cs2321;
 
+import net.datastructures.List;
+
 import java.util.Iterator;
 
 public class Set<E> {
@@ -88,6 +90,15 @@ public class Set<E> {
                 increaseSize();
             add(size, e);
         }
+    }
+
+    public void addFirst(E e)  {
+        if (valid(e)) {
+            if(size == data.length)
+                increaseSize();
+            add(0, e);
+        }
+
     }
 
     // Return the capacity of array, not the number of elements.

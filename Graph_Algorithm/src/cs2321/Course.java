@@ -49,6 +49,6 @@ public class Course {
                 return backwards(v, semesters);
             }
         }
-        return semesters + 1;
+        return semesters += 1;
     }
 }
